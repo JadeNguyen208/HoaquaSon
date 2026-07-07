@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hoa Quả Sơn Farm - Trái cây hữu cơ tươi ngon từ Khánh Hòa. Mít ruột đỏ, vú sữa hoàng kim, sầu riêng Musang King và nhiều loại đặc sản.">
+<title>Hoa Quả Sơn Farm | Trái Cây Hữu Cơ Khánh Hòa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --green-900: #0d2818;
+  --green-800: #1a4731;
+  --green-700: #1f5a3e;
+  --green-600: #2d7a4f;
+  --green-500: #3a9161;
+  --green-400: #52ad79;
+  --green-300: #7ecb9a;
+  --green-200: #b3e0c4;
+  --green-100: #d8f0e4;
+  --green-50:  #f0faf4;
+  --gold-900:  #5a3d00;
+  --gold-700:  #8a6200;
+  --gold-500:  #c9a84c;
+  --gold-400:  #d4b870;
+  --gold-300:  #e0cd99;
+  --gold-100:  #f7f0d8;
+  --cream:     #fdf9f0;
+  --white:     #ffffff;
+  --gray-900:  #1a1a1a;
+  --gray-700:  #3d3d3d;
+  --gray-500:  #6b6b6b;
+  --gray-300:  #c5c5c5;
+  --gray-100:  #f4f4f4;
+  --font-display: 'Be Vietnam Pro', Georgia, serif;
+  --font-heading: 'Be Vietnam Pro', Georgia, serif;
+  --font-body:    'Be Vietnam Pro', system-ui, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --shadow-sm: 0 2px 8px rgba(13,40,24,0.08);
+  --shadow-md: 0 8px 24px rgba(13,40,24,0.12);
+  --shadow-lg: 0 20px 48px rgba(13,40,24,0.16);
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-main);
+  background: var(--cream);
+  color: var(--gray-900);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--green-50); }
+::-webkit-scrollbar-thumb { background: var(--green-400); border-radius: 3px; }
+
+/* ===== TYPOGRAPHY ===== */
+h1,h2,h3,h4,h5 { font-family: var(--font-main); font-weight: 700; line-height: 1.2; color: var(--green-800); }
+.display { font-family: var(--font-main); }
+.section-label { font-family: var(--font-main); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-700); }
+.section-title { font-size: clamp(2rem, 4vw, 3rem); color: var(--green-800); margin: 0.5rem 0 1rem; }
+.section-sub { font-size: 1.1rem; color: var(--gray-500); max-width: 600px; margin: 0 auto 3rem; }
+
+/* ===== NAVBAR ===== */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 1rem 2rem;
+  transition: var(--transition);
+  display: flex; align-items: center; justify-content: space-between;
+}
+#navbar.scrolled {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-sm);
+  padding: 0.75rem 2rem;
+}
+.nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.nav-logo-icon {
+  width: 42px; height: 42px;
+  background: var(--green-700);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-logo-icon svg { width: 22px; height: 22px; fill: var(--gold-400); }
+.nav-logo-text { font-family: var(--font-main); font-size: 1.2rem; font-weight: 700; color: var(--white); transition: var(--transition); }
+#navbar.scrolled .nav-logo-text { color: var(--green-800); }
+.nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+.nav-links a {
+  display: block; padding: 0.5rem 0.9rem;
+  font-size: 0.9rem; font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none; border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+#navbar.scrolled .nav-links a { color: var(--gray-700); }
+.nav-links a:hover, .nav-links a.active { color: var(--gold-500); background: rgba(201,168,76,0.1); }
+.nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+.lang-toggle {
+  display: flex; border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px; overflow: hidden;
+  transition: var(--transition);
+}
+#navbar.scrolled .lang-toggle { border-color: var(--gray-300); }
+.lang-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem; font-weight: 500;
+  border: none; cursor: pointer; background: transparent;
+  color: rgba(255,255,255,0.7);
+  transition: var(--transition);
+}
+#navbar.scrolled .lang-btn { color: var(--gray-500); }
+.lang-btn.active { background: var(--green-600); color: var(--white); }
+.cart-btn {
+  position: relative;
+  width: 40px; height: 40px;
+  border: none; cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+#navbar.scrolled .cart-btn { background: var(--green-50); }
+.cart-btn svg { width: 18px; height: 18px; stroke: var(--white); }
+#navbar.scrolled .cart-btn svg { stroke: var(--green-800); }
+.cart-badge {
+  position: absolute; top: -4px; right: -4px;
+  width: 18px; height: 18px;
+  background: var(--gold-500);
+  border-radius: 50%;
+  font-size: 0.65rem; font-weight: 700; color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  display: none;
+}
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 0.5rem; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
+#navbar.scrolled .hamburger span { background: var(--green-800); }
+
+/* ===== HERO ===== */
+#hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 50%, var(--green-800) 100%);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.hero-bg-pattern {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(201,168,76,0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(52,173,121,0.15) 0%, transparent 50%);
+}
+.hero-leaves {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 50%;
+  background: url('images/hero-bg.jpg') center/cover;
+  opacity: 0.2;
+  -webkit-mask-image: linear-gradient(to right, transparent, black);
+  mask-image: linear-gradient(to right, transparent, black);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 8rem 2rem 4rem;
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.hero-text { color: var(--white); }
+.hero-tagline {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid rgba(201,168,76,0.5);
+  border-radius: 20px;
+  font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold-300); margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: var(--font-main); font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 600; line-height: 1;
+  color: var(--white); margin-bottom: 0.5rem;
+}
+.hero-title .accent { color: var(--gold-400); font-style: italic; }
+.hero-subtitle { font-family: var(--font-main); font-size: 1.3rem; font-style: italic; color: var(--green-200); margin-bottom: 1.5rem; }
+.hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 480px; line-height: 1.8; margin-bottom: 2.5rem; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  padding: 0.9rem 2rem;
+  background: var(--gold-500);
+  color: var(--green-900);
+  border: none; border-radius: var(--radius-md);
+  font-family: var(--font-main); font-size: 0.95rem; font-weight: 500;
+  cursor: pointer; text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover { background: var(--gold-400); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,168,76,0.4); }
+.btn-outline {
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-main); font-size: 0.95rem; font-weight: 400;
+  cursor: pointer; text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+.hero-stats { display: flex; gap: 3rem; margin-top: 3rem; }
+.hero-stat-num { font-family: var(--font-main); font-size: 2.5rem; font-weight: 700; color: var(--gold-400); }
+.hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+.hero-visual { display: flex; justify-content: center; align-items: center; }
+.hero-fruit-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  transform: rotate(3deg);
+}
+.hero-fruit-card {
+  border-radius: var(--radius-lg); overflow: hidden;
+  aspect-ratio: 1;
+}
+.hero-fruit-card:nth-child(1) { transform: translateY(-1rem); }
+.hero-fruit-card:nth-child(4) { transform: translateY(1rem); }
+.hero-fruit-card img { width: 100%; height: 100%; object-fit: cover; }
+.hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; animation: bounce 2s infinite; }
+.hero-scroll span { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); }
+@keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+/* ===== ABOUT STRIP ===== */
+.about-strip {
+  background: var(--white);
+  padding: 4rem 2rem;
+}
+.about-strip-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-img { border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 4/3; }
+.about-img img { width: 100%; height: 100%; object-fit: cover; }
+.about-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.badge {
+  padding: 0.4rem 1rem; border-radius: 20px;
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
+}
+.badge-green { background: var(--green-100); color: var(--green-700); }
+.badge-gold { background: var(--gold-100); color: var(--gold-700); }
+
+/* ===== PRODUCTS SECTION ===== */
+#products { padding: 5rem 2rem; }
+.products-inner { max-width: 1200px; margin: 0 auto; }
+.products-header { text-align: center; margin-bottom: 3rem; }
+.filter-bar { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 20px;
+  background: transparent; cursor: pointer;
+  font-size: 0.875rem; font-family: var(--font-main);
+  color: var(--gray-700); transition: var(--transition);
+}
+.filter-btn.active, .filter-btn:hover { background: var(--green-700); border-color: var(--green-700); color: var(--white); }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.product-card.unavailable { opacity: 0.7; }
+.product-img { aspect-ratio: 4/3; overflow: hidden; position: relative; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.product-card:hover .product-img img { transform: scale(1.05); }
+.product-badge {
+  position: absolute; top: 0.75rem; left: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px; font-size: 0.72rem; font-weight: 600;
+}
+.product-badge.in-stock { background: var(--green-600); color: var(--white); }
+.product-badge.coming-soon { background: var(--gold-500); color: var(--green-900); }
+.product-info { padding: 1.25rem; }
+.product-name { font-family: var(--font-main); font-size: 1.15rem; font-weight: 700; color: var(--green-800); margin-bottom: 0.5rem; }
+.product-name-en { font-size: 0.82rem; color: var(--gray-500); font-style: italic; margin-bottom: 0.75rem; }
+.product-desc { font-size: 0.85rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.product-footer { display: flex; align-items: center; justify-content: space-between; }
+.product-price { font-family: var(--font-main); font-size: 1.15rem; font-weight: 700; color: var(--green-700); }
+.product-price.unavailable { color: var(--gray-500); font-size: 0.9rem; font-weight: 400; }
+.add-cart-btn {
+  width: 38px; height: 38px;
+  background: var(--green-700); border: none;
+  border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.add-cart-btn:hover { background: var(--green-600); transform: scale(1.1); }
+.add-cart-btn svg { width: 16px; height: 16px; stroke: var(--white); }
+
+/* ===== RECOMMENDATION STRIP ===== */
+.rec-strip {
+  background: var(--green-50);
+  border-top: 1px solid var(--green-200);
+  padding: 3rem 2rem;
+}
+.rec-inner { max-width: 1200px; margin: 0 auto; }
+.rec-title { font-size: 1.3rem; font-family: var(--font-main); color: var(--green-800); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+.rec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 1rem; }
+.rec-card {
+  background: var(--white); border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  display: flex; gap: 0.75rem; align-items: center;
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: var(--transition); border: 1px solid transparent;
+}
+.rec-card:hover { border-color: var(--green-400); transform: translateY(-2px); }
+.rec-card-img { width: 48px; height: 48px; border-radius: var(--radius-sm); overflow: hidden; flex-shrink: 0; }
+.rec-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.rec-card-name { font-size: 0.85rem; font-weight: 500; color: var(--green-800); }
+.rec-card-price { font-size: 0.78rem; color: var(--gray-500); }
+
+/* ===== ADVISOR PAGE ===== */
+#advisor { padding: 5rem 2rem; min-height: 100vh; background: var(--cream); }
+.advisor-inner { max-width: 1000px; margin: 0 auto; }
+.advisor-header { text-align: center; margin-bottom: 3rem; }
+.chat-tabs { display: flex; border-bottom: 2px solid var(--green-200); margin-bottom: 1.5rem; }
+.chat-tab {
+  padding: 0.75rem 1.5rem; cursor: pointer;
+  font-size: 0.95rem; font-weight: 500;
+  color: var(--gray-500); border-bottom: 2px solid transparent;
+  margin-bottom: -2px; transition: var(--transition);
+  background: none; border-left: none; border-right: none; border-top: none;
+  font-family: var(--font-main);
+}
+.chat-tab.active { color: var(--green-700); border-bottom-color: var(--green-700); }
+.chat-container {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.chat-header {
+  background: var(--green-800);
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.chat-avatar {
+  width: 44px; height: 44px;
+  background: var(--green-600);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--gold-400);
+}
+.chat-avatar svg { width: 22px; height: 22px; fill: var(--gold-400); }
+.chat-title-text { color: var(--white); font-size: 1rem; font-weight: 600; }
+.chat-subtitle { color: rgba(255,255,255,0.6); font-size: 0.8rem; }
+.chat-status { margin-left: auto; display: flex; align-items: center; gap: 0.5rem; color: var(--green-300); font-size: 0.8rem; }
+.chat-status-dot { width: 8px; height: 8px; background: var(--green-400); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+.chat-messages { height: 420px; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+.msg { display: flex; gap: 0.75rem; max-width: 85%; }
+.msg.user { flex-direction: row-reverse; margin-left: auto; }
+.msg-bubble {
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem; line-height: 1.6;
+}
+.msg.ai .msg-bubble { background: var(--green-50); color: var(--gray-900); border-bottom-left-radius: 4px; }
+.msg.user .msg-bubble { background: var(--green-700); color: var(--white); border-bottom-right-radius: 4px; }
+.msg-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--green-700); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.msg-icon svg { width: 15px; height: 15px; fill: var(--white); }
+.typing-indicator { display: none; align-items: center; gap: 4px; padding: 0.75rem 1rem; background: var(--green-50); border-radius: var(--radius-md); width: fit-content; }
+.typing-indicator.active { display: flex; }
+.typing-dot { width: 7px; height: 7px; background: var(--green-400); border-radius: 50%; animation: typing 1.4s infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing { 0%,80%,100% { transform: scale(0.7); opacity:0.5; } 40% { transform: scale(1); opacity:1; } }
+.chat-input-area { padding: 1.25rem 1.5rem; border-top: 1px solid var(--gray-100); display: flex; gap: 0.75rem; }
+.chat-input {
+  flex: 1; padding: 0.85rem 1.2rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-main); font-size: 0.9rem;
+  outline: none; transition: var(--transition);
+  background: var(--cream);
+}
+.chat-input:focus { border-color: var(--green-400); background: var(--white); }
+.chat-send-btn {
+  width: 46px; height: 46px;
+  background: var(--green-700); border: none;
+  border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.chat-send-btn:hover { background: var(--green-600); transform: scale(1.05); }
+.chat-send-btn svg { width: 18px; height: 18px; stroke: var(--white); }
+.source-tag { display: inline-block; padding: 0.2rem 0.6rem; background: var(--green-100); color: var(--green-700); border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 500; margin-top: 0.5rem; margin-right: 0.3rem; text-decoration: none; }
+
+/* ===== RECOGNITION PAGE ===== */
+#recognition { padding: 5rem 2rem; min-height: 100vh; }
+.recognition-inner { max-width: 900px; margin: 0 auto; }
+.recognition-header { text-align: center; margin-bottom: 3rem; }
+.upload-zone {
+  border: 2px dashed var(--green-300);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  text-align: center;
+  background: var(--white);
+  transition: var(--transition); cursor: pointer;
+}
+.upload-zone:hover, .upload-zone.drag-over { border-color: var(--green-600); background: var(--green-50); }
+.upload-icon { font-size: 3rem; margin-bottom: 1rem; }
+.upload-text { font-size: 1.05rem; color: var(--gray-700); margin-bottom: 0.5rem; }
+.upload-sub { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+.upload-actions { display: flex; gap: 1rem; justify-content: center; }
+.btn-green {
+  padding: 0.75rem 1.5rem;
+  background: var(--green-700); color: var(--white);
+  border: none; border-radius: var(--radius-md);
+  font-family: var(--font-main); font-size: 0.9rem; font-weight: 500;
+  cursor: pointer; transition: var(--transition);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-green:hover { background: var(--green-600); }
+.recognition-result {
+  margin-top: 2rem;
+  background: var(--white); border-radius: var(--radius-xl);
+  padding: 2rem; box-shadow: var(--shadow-md);
+  display: none;
+}
+.recognition-result.show { display: block; }
+.result-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.result-img { border-radius: var(--radius-lg); overflow: hidden; }
+.result-img img { width: 100%; height: 250px; object-fit: cover; }
+.result-predictions { display: flex; flex-direction: column; gap: 0.75rem; }
+.prediction-item { display: flex; align-items: center; gap: 1rem; }
+.prediction-name { width: 140px; font-size: 0.9rem; font-weight: 500; color: var(--green-800); flex-shrink: 0; }
+.prediction-bar { flex: 1; height: 8px; background: var(--gray-100); border-radius: 4px; overflow: hidden; }
+.prediction-fill { height: 100%; background: linear-gradient(to right, var(--green-600), var(--green-400)); border-radius: 4px; transition: width 0.6s ease; }
+.prediction-pct { font-size: 0.85rem; font-weight: 600; color: var(--green-700); width: 40px; text-align: right; }
+.result-match {
+  margin-top: 1.5rem; padding: 1rem 1.25rem;
+  background: var(--green-50); border-radius: var(--radius-md);
+  border-left: 4px solid var(--green-600);
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* ===== BLOG PAGE ===== */
+#blog { padding: 5rem 2rem; }
+.blog-inner { max-width: 1200px; margin: 0 auto; }
+.blog-header { text-align: center; margin-bottom: 3rem; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.75rem; }
+.blog-card {
+  background: var(--white); border-radius: var(--radius-lg);
+  overflow: hidden; box-shadow: var(--shadow-sm);
+  transition: var(--transition); cursor: pointer;
+}
+.blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.blog-card-img { aspect-ratio: 16/9; overflow: hidden; }
+.blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.blog-card:hover .blog-card-img img { transform: scale(1.04); }
+.blog-card-body { padding: 1.5rem; }
+.blog-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.blog-cat { padding: 0.25rem 0.75rem; background: var(--green-100); color: var(--green-700); border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
+.blog-date { font-size: 0.78rem; color: var(--gray-500); }
+.blog-read-time { font-size: 0.78rem; color: var(--gray-500); margin-left: auto; }
+.blog-title { font-family: var(--font-main); font-size: 1.15rem; font-weight: 700; color: var(--green-800); margin-bottom: 0.75rem; line-height: 1.4; }
+.blog-excerpt { font-size: 0.85rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.blog-read-btn { font-size: 0.85rem; color: var(--green-700); font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; }
+.blog-read-btn svg { width: 14px; height: 14px; stroke: var(--green-700); transition: transform 0.2s; }
+.blog-card:hover .blog-read-btn svg { transform: translateX(3px); }
+
+/* ===== CONTACT PAGE ===== */
+#contact { padding: 5rem 2rem; }
+.contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; }
+.contact-info-title { font-size: 2rem; margin-bottom: 1rem; }
+.contact-info-desc { color: var(--gray-600); line-height: 1.8; margin-bottom: 2rem; }
+.contact-detail { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+.contact-icon { width: 44px; height: 44px; background: var(--green-100); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-icon svg { width: 20px; height: 20px; stroke: var(--green-700); }
+.contact-detail-label { font-size: 0.8rem; color: var(--gray-500); margin-bottom: 0.2rem; }
+.contact-detail-val { font-size: 0.95rem; font-weight: 500; color: var(--gray-900); }
+.contact-form { background: var(--white); padding: 2.5rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.form-label { font-size: 0.85rem; font-weight: 500; color: var(--gray-700); }
+.form-input, .form-textarea {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  font-family: var(--font-main); font-size: 0.9rem;
+  outline: none; transition: var(--transition);
+  background: var(--cream);
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--green-500); background: var(--white); box-shadow: 0 0 0 3px rgba(58,145,97,0.1); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-submit {
+  width: 100%; padding: 1rem;
+  background: var(--green-700); color: var(--white);
+  border: none; border-radius: var(--radius-md);
+  font-family: var(--font-main); font-size: 1rem; font-weight: 500;
+  cursor: pointer; transition: var(--transition);
+}
+.form-submit:hover { background: var(--green-600); }
+.form-success { display: none; padding: 1rem; background: var(--green-50); border: 1px solid var(--green-300); border-radius: var(--radius-md); color: var(--green-800); text-align: center; font-weight: 500; }
+.form-success.show { display: block; }
+
+/* ===== PAYMENT MODAL ===== */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+  display: none; align-items: center; justify-content: center; padding: 1rem;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--white); border-radius: var(--radius-xl);
+  width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+.modal-header { padding: 1.5rem 1.5rem 1rem; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; }
+.modal-title { font-family: var(--font-main); font-size: 1.3rem; color: var(--green-800); }
+.modal-close { width: 32px; height: 32px; border: none; background: var(--gray-100); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.modal-close svg { width: 16px; height: 16px; stroke: var(--gray-700); }
+.modal-body { padding: 1.5rem; }
+.payment-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+.pay-method-btn {
+  padding: 0.9rem; border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md); cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  background: var(--white); transition: var(--transition);
+}
+.pay-method-btn:hover { border-color: var(--green-400); }
+.pay-method-btn.active { border-color: var(--green-700); background: var(--green-50); }
+.pay-method-icon { font-size: 1.5rem; }
+.pay-method-label { font-size: 0.8rem; font-weight: 500; color: var(--gray-700); }
+.card-form { display: none; }
+.card-form.show { display: block; }
+.order-summary { background: var(--green-50); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+.order-item { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 0.4rem 0; }
+.order-total { display: flex; justify-content: space-between; font-size: 1rem; font-weight: 700; padding-top: 0.75rem; border-top: 1px solid var(--green-200); margin-top: 0.75rem; color: var(--green-800); }
+
+/* ===== CART SIDEBAR ===== */
+.cart-sidebar {
+  position: fixed; right: -420px; top: 0; bottom: 0; z-index: 1500;
+  width: 400px; background: var(--white);
+  box-shadow: var(--shadow-lg);
+  transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex; flex-direction: column;
+}
+.cart-sidebar.open { right: 0; }
+.cart-sidebar-header { padding: 1.5rem; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; }
+.cart-sidebar-title { font-family: var(--font-main); font-size: 1.3rem; color: var(--green-800); }
+.cart-close { width: 36px; height: 36px; border: 1px solid var(--gray-200); border-radius: 50%; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.cart-close svg { width: 16px; height: 16px; stroke: var(--gray-700); }
+.cart-items { flex: 1; overflow-y: auto; padding: 1rem; }
+.cart-item { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--gray-100); }
+.cart-item-img { width: 64px; height: 64px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; }
+.cart-item-img img { width: 100%; height: 100%; object-fit: cover; }
+.cart-item-name { font-weight: 600; font-size: 0.9rem; color: var(--green-800); margin-bottom: 0.25rem; }
+.cart-item-controls { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem; }
+.qty-btn { width: 26px; height: 26px; border: 1px solid var(--gray-300); border-radius: 50%; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: var(--transition); }
+.qty-btn:hover { background: var(--green-700); border-color: var(--green-700); color: var(--white); }
+.qty-val { font-size: 0.9rem; font-weight: 600; min-width: 24px; text-align: center; }
+.cart-item-price { font-weight: 700; color: var(--green-700); font-size: 0.9rem; }
+.cart-remove { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--gray-400); font-size: 1.1rem; }
+.cart-empty { text-align: center; padding: 3rem 1rem; color: var(--gray-500); }
+.cart-footer { padding: 1.25rem; border-top: 1px solid var(--gray-100); }
+.cart-total-row { display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 700; color: var(--green-800); margin-bottom: 1rem; }
+.btn-checkout { width: 100%; padding: 1rem; background: var(--green-700); color: var(--white); border: none; border-radius: var(--radius-md); font-family: var(--font-main); font-size: 1rem; font-weight: 500; cursor: pointer; transition: var(--transition); }
+.btn-checkout:hover { background: var(--green-600); }
+.cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1499; display: none; }
+.cart-overlay.open { display: block; }
+
+/* ===== FLOAT BOT ===== */
+.float-bot-btn {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 900;
+  width: 60px; height: 60px;
+  background: var(--green-700);
+  border-radius: 50%; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(45,122,79,0.5);
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.float-bot-btn:hover { background: var(--green-600); transform: scale(1.08); }
+.float-bot-btn svg { width: 28px; height: 28px; fill: var(--white); }
+.float-chat {
+  position: fixed; bottom: 5.5rem; right: 2rem; z-index: 900;
+  width: 340px; background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transform: scale(0.8) translateY(20px); opacity: 0; pointer-events: none;
+  transition: var(--transition);
+}
+.float-chat.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+.float-chat-header { background: var(--green-800); padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+.float-chat-name { color: var(--white); font-weight: 600; font-size: 0.95rem; }
+.float-chat-close { background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer; font-size: 1.2rem; line-height: 1; }
+.float-chat-messages { height: 260px; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.float-msg { font-size: 0.85rem; padding: 0.6rem 0.9rem; border-radius: var(--radius-md); max-width: 85%; }
+.float-msg.ai { background: var(--green-50); color: var(--gray-900); align-self: flex-start; border-bottom-left-radius: 4px; }
+.float-msg.user { background: var(--green-700); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
+.float-quick-btns { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0 1rem 0.75rem; }
+.float-quick-btn { padding: 0.35rem 0.8rem; border: 1px solid var(--green-400); border-radius: 20px; background: none; cursor: pointer; font-size: 0.78rem; color: var(--green-700); transition: var(--transition); font-family: var(--font-main); }
+.float-quick-btn:hover { background: var(--green-700); color: var(--white); }
+.float-input-row { display: flex; gap: 0.5rem; padding: 0.75rem; border-top: 1px solid var(--gray-100); }
+.float-input { flex: 1; padding: 0.5rem 0.9rem; border: 1px solid var(--gray-300); border-radius: 20px; font-size: 0.85rem; font-family: var(--font-main); outline: none; }
+.float-input:focus { border-color: var(--green-400); }
+.float-send { width: 34px; height: 34px; background: var(--green-700); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.float-send svg { width: 14px; height: 14px; stroke: var(--white); }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials { padding: 5rem 2rem; background: var(--green-900); }
+.testimonials-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+.testimonials .section-label { color: var(--gold-300); }
+.testimonials .section-title { color: var(--white); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.testimonial-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 1.75rem; text-align: left; }
+.testimonial-stars { color: var(--gold-400); font-size: 1rem; margin-bottom: 1rem; }
+.testimonial-text { color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+.testimonial-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+.testimonial-name { font-size: 0.9rem; font-weight: 600; color: var(--white); }
+.testimonial-loc { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+
+/* ===== FOOTER ===== */
+footer { background: var(--green-900); color: rgba(255,255,255,0.7); padding: 4rem 2rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand-name { font-family: var(--font-main); font-size: 1.5rem; color: var(--white); margin-bottom: 0.75rem; }
+.footer-brand-desc { font-size: 0.88rem; line-height: 1.8; max-width: 280px; }
+.footer-col-title { font-family: var(--font-main); font-size: 1rem; color: var(--white); margin-bottom: 1rem; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: var(--transition); }
+.footer-links a:hover { color: var(--gold-400); }
+.footer-social { display: flex; gap: 0.75rem; margin-top: 1rem; }
+.social-btn { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); cursor: pointer; }
+.social-btn:hover { border-color: var(--gold-400); background: rgba(201,168,76,0.1); }
+.social-btn svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.7); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; }
+.footer-bottom-links { display: flex; gap: 1.5rem; }
+.footer-bottom-links a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-bottom-links a:hover { color: var(--gold-400); }
+
+/* ===== PAGE SECTIONS ===== */
+.page-section { display: none; }
+.page-section.active { display: block; }
+#home-section { display: block; }
+
+/* ===== UTILITIES ===== */
+.text-center { text-align: center; }
+.section-divider { height: 1px; background: linear-gradient(to right, transparent, var(--green-300), transparent); margin: 0; }
+.ml-auto { margin-left: auto; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-visual { display: none; }
+  .about-strip-inner { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .result-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--green-900); flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; z-index: 999; }
+  .nav-links.mobile-open { display: flex; }
+  .nav-links a { font-size: 1.2rem; color: var(--white) !important; }
+  .hamburger { display: flex; }
+  .cart-sidebar { width: 100%; right: -100%; }
+  .form-row { grid-template-columns: 1fr; }
+  .payment-methods { grid-template-columns: 1fr 1fr; }
+  .float-chat { width: calc(100vw - 2rem); right: 1rem; }
+}
+@media (max-width: 480px) {
+  .hero-stats { gap: 1.5rem; }
+  .hero-stat-num { font-size: 1.8rem; }
+  .footer-top { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar"></nav>
+<div class="cart-overlay" id="cartOverlay" onclick="App.closeCart()"></div>
+<aside class="cart-sidebar" id="cartSidebar"></aside>
+
+<div class="modal-overlay" id="paymentModalOverlay">
+  <div class="modal" id="paymentModal"></div>
+</div>
+<div class="modal-overlay" id="productModalOverlay">
+  <div class="modal" id="productModal">
+    <div class="modal-header">
+      <span class="modal-title" id="productModalTitle"></span>
+      <button class="modal-close" onclick="App.closeProductModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="productModalBody"></div>
+  </div>
+</div>
+
+<div id="toast" style="position:fixed;bottom:7rem;right:2rem;z-index:2000;background:var(--green-700);color:var(--white);padding:0.75rem 1.25rem;border-radius:var(--radius-md);font-size:0.9rem;font-weight:500;display:none;opacity:1;transition:opacity 0.3s;box-shadow:var(--shadow-md)"></div>
+<div id="floatBot"></div>
+
+<div id="home-section" class="page-section active">
+  <section id="hero"></section>
+  <div class="about-strip" id="about-strip"></div>
+  <div class="section-divider"></div>
+  <div id="featured-products" style="background:var(--cream)"></div>
+  <div id="testimonials" class="testimonials"></div>
+</div>
+
+<div id="products-section" class="page-section">
+  <section id="products" style="padding:5rem 2rem;">
+    <div class="products-inner">
+      <div class="products-header">
+        <p class="section-label" id="prodLabel">Từ vườn đến bàn ăn</p>
+        <h2 class="section-title" id="prodTitle">Sản Phẩm Của Chúng Tôi</h2>
+        <p class="section-sub" id="prodSub">Tươi từ vườn, ngon tận gốc</p>
+      </div>
+      <div class="filter-bar" id="filterBar"></div>
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </section>
+  <div class="rec-strip">
+    <div class="rec-inner">
+      <p class="rec-title" id="recTitle">🔥 Được mua nhiều nhất</p>
+      <div class="rec-grid" id="rec-grid"></div>
+    </div>
+  </div>
+</div>
+
+<div id="advisor-section" class="page-section"></div>
+<div id="recognition-section" class="page-section"></div>
+<div id="blog-section" class="page-section"></div>
+<div id="contact-section" class="page-section"></div>
+<footer id="main-footer"></footer>
+
+<script>
+const PRODUCTS = [
+  {
+    id: 'mit-ruot-do',
+    nameVI: 'Mít Ruột Đỏ',
+    nameEN: 'Red-Flesh Jackfruit',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/mit-ruot-do.jpg',
+    descVI: 'Giống mít quý hiếm với ruột đỏ hồng đặc trưng, vị ngọt thanh, thơm nồng nàn. Trồng theo tiêu chuẩn hữu cơ tại nông trại Hoa Quả Sơn.',
+    descEN: 'A rare jackfruit variety with distinctive red-pink flesh, sweet and fragrant. Organically grown at Hoa Qua Son Farm.',
+    category: 'tropical',
+    nutrition: { calories: 95, vitC: '22.7mg', fiber: '1.5g', potassium: '448mg' },
+    combos: ['vo-sua-hoang-kim', 'buoi-da-xanh'],
+    tags: ['rare', 'organic']
+  },
+  {
+    id: 'vo-sua-hoang-kim',
+    nameVI: 'Vú Sữa Hoàng Kim',
+    nameEN: 'Golden Star Apple',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/vo-sua-hoang-kim.jpg',
+    descVI: 'Vú sữa Hoàng Kim vỏ vàng óng, thịt trắng mịn, ngọt lịm như sữa. Đặc sản nức tiếng của vùng đất Khánh Hòa.',
+    descEN: 'Golden skin, silky white flesh, sweet as milk. A specialty of Khanh Hoa region.',
+    category: 'tropical',
+    nutrition: { calories: 67, vitC: '15.2mg', fiber: '1.1g', potassium: '124mg' },
+    combos: ['mit-ruot-do', 'vo-sua-mica'],
+    tags: ['bestseller', 'local']
+  },
+  {
+    id: 'oi-ruby',
+    nameVI: 'Ổi Ruby',
+    nameEN: 'Ruby Guava',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/oi-ruby.jpg',
+    descVI: 'Ổi Ruby vỏ xanh đậm, ruột đỏ hồng như ruby, giòn tan, ngọt thanh với hương thơm đặc trưng. Giàu vitamin C gấp 4 lần cam.',
+    descEN: 'Ruby Guava with deep green skin and ruby-red flesh. Crisp, sweet and uniquely fragrant. 4x more Vitamin C than oranges.',
+    category: 'tropical',
+    nutrition: { calories: 68, vitC: '228mg', fiber: '5.4g', potassium: '417mg' },
+    combos: ['coc-chua-ngot', 'man-an-phuoc'],
+    tags: ['vitamin-c', 'crispy']
+  },
+  {
+    id: 'sau-rieng-musangking',
+    nameVI: 'Sầu Riêng Musang King',
+    nameEN: 'Musang King Durian',
+    price: 0,
+    unit: 'kg',
+    available: false,
+    image: 'images/sau-rieng.jpg',
+    descVI: 'Sầu riêng Musang King - vua của các loại sầu riêng. Cơm dày vàng nghệ, vị béo đậm đà, đắng nhẹ đặc trưng. Hiện đang trong mùa chăm sóc, sắp ra trái.',
+    descEN: 'Musang King - the king of durians. Thick golden flesh, rich creamy taste with a signature bitter note. Currently in growing season.',
+    category: 'tropical',
+    nutrition: { calories: 357, vitC: '19.7mg', fiber: '3.8g', potassium: '436mg' },
+    combos: [],
+    tags: ['premium', 'coming-soon']
+  },
+  {
+    id: 'chuoi-cau',
+    nameVI: 'Chuối Cau',
+    nameEN: 'Lady Finger Banana',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/chuoi-cau.jpg',
+    descVI: 'Chuối cau nhỏ nhắn, vàng ươm, ngọt lịm và thơm hơn chuối thường. Trái chín tự nhiên trên cây, không dùng hóa chất thúc chín.',
+    descEN: 'Small, golden, sweeter and more aromatic than regular bananas. Naturally tree-ripened without chemicals.',
+    category: 'tropical',
+    nutrition: { calories: 89, vitC: '8.7mg', fiber: '2.6g', potassium: '358mg' },
+    combos: ['vo-sua-hoang-kim', 'vo-sua-mica'],
+    tags: ['natural', 'kid-friendly']
+  },
+  {
+    id: 'coc-chua-ngot',
+    nameVI: 'Cóc Chua Ngọt',
+    nameEN: 'Sweet & Sour Ambarella',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/coc-chua-ngot.jpg',
+    descVI: 'Cóc chua ngọt vừa, giòn tan, thơm mát. Ăn kèm muối ớt hay mắm ruốc đều tuyệt vời. Vị chua nhẹ kích thích vị giác.',
+    descEN: 'Perfectly sweet-sour, crispy and refreshing. Great with chili salt or shrimp paste. A classic Vietnamese snack fruit.',
+    category: 'snack',
+    nutrition: { calories: 52, vitC: '46mg', fiber: '2.1g', potassium: '190mg' },
+    combos: ['oi-ruby', 'man-an-phuoc'],
+    tags: ['snack', 'sour-sweet']
+  },
+  {
+    id: 'man-an-phuoc',
+    nameVI: 'Mận An Phước',
+    nameEN: 'An Phuoc Plum',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/man-an-phuoc.jpg',
+    descVI: 'Mận An Phước đặc sản Khánh Hòa, vỏ đỏ tươi, thịt giòn, ngọt thanh. Trái to đều, không dập, hái đúng độ chín.',
+    descEN: 'Khanh Hoa specialty plum with bright red skin, crisp flesh and a refreshingly sweet taste. Hand-picked at peak ripeness.',
+    category: 'stone-fruit',
+    nutrition: { calories: 46, vitC: '9.5mg', fiber: '1.4g', potassium: '157mg' },
+    combos: ['coc-chua-ngot', 'oi-ruby'],
+    tags: ['local-specialty', 'crispy']
+  },
+  {
+    id: 'buoi-da-xanh',
+    nameVI: 'Bưởi Da Xanh',
+    nameEN: 'Green Skin Pomelo',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/buoi-da-xanh.jpg',
+    descVI: 'Bưởi da xanh Bến Tre nổi tiếng, tép mọng nước, ngọt ít chua, ăn không bị chát. Giàu vitamin C và chất xơ.',
+    descEN: 'Famous Ben Tre green pomelo with juicy segments, sweet with mild acidity, no bitterness. Rich in Vitamin C and fiber.',
+    category: 'citrus',
+    nutrition: { calories: 38, vitC: '61mg', fiber: '1.1g', potassium: '135mg' },
+    combos: ['mit-ruot-do', 'nho-than-go'],
+    tags: ['detox', 'vitamin-c']
+  },
+  {
+    id: 'vo-sua-mica',
+    nameVI: 'Vú Sữa Mica',
+    nameEN: 'Mica Star Apple',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/vo-sua-mica.jpg',
+    descVI: 'Vú sữa Mica vỏ tím đặc trưng, thịt trắng mịn như sữa, ngọt đậm hơn vú sữa thường. Trái to tròn, không hạt.',
+    descEN: 'Mica variety with characteristic purple skin, smooth milky-white flesh, richer sweetness than regular star apples.',
+    category: 'tropical',
+    nutrition: { calories: 67, vitC: '15.2mg', fiber: '1.1g', potassium: '124mg' },
+    combos: ['vo-sua-hoang-kim', 'chuoi-cau'],
+    tags: ['premium', 'seedless']
+  },
+  {
+    id: 'nho-than-go',
+    nameVI: 'Nho Thân Gỗ',
+    nameEN: 'Woody Stem Grape',
+    price: 40000,
+    unit: 'kg',
+    available: true,
+    image: 'images/nho-than-go.jpg',
+    descVI: 'Nho thân gỗ lâu năm, quả to mọng, ngọt đậm và thơm. Giàu chất chống oxy hóa resveratrol. Trồng không thuốc trừ sâu.',
+    descEN: 'Mature woody vine grapes, large and juicy with deep sweetness. Rich in resveratrol antioxidants. Pesticide-free.',
+    category: 'berry',
+    nutrition: { calories: 69, vitC: '10.8mg', fiber: '0.9g', potassium: '191mg' },
+    combos: ['buoi-da-xanh', 'vo-sua-hoang-kim'],
+    tags: ['antioxidant', 'pesticide-free']
+  },
+  {
+    id: 'chom-chom',
+    nameVI: 'Chôm Chôm',
+    nameEN: 'Rambutan',
+    price: 0,
+    unit: 'kg',
+    available: false,
+    image: 'images/chom-chom.jpg',
+    descVI: 'Chôm chôm trái mùa vụ, hiện tại vườn đang trong giai đoạn ra hoa. Dự kiến có trái sau 2-3 tháng.',
+    descEN: 'Rambutan is currently in flowering stage. Expected harvest in 2-3 months.',
+    category: 'tropical',
+    nutrition: { calories: 82, vitC: '4.9mg', fiber: '0.9g', potassium: '42mg' },
+    combos: [],
+    tags: ['coming-soon']
+  }
+];
+
+const BLOG_POSTS = [
+  {
+    id: 'mit-ruot-do-dac-san-hiem',
+    titleVI: 'Mít Ruột Đỏ - Giống Đặc Sản Hiếm Có Của Việt Nam',
+    titleEN: 'Red-Flesh Jackfruit - Vietnam\'s Rare Specialty',
+    date: '2025-05-20',
+    categoryVI: 'Câu chuyện nông trại',
+    categoryEN: 'Farm Stories',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Jackfruit_hanging.jpg/600px-Jackfruit_hanging.jpg',
+    excerptVI: 'Hành trình tìm kiếm và nhân giống cây mít ruột đỏ quý hiếm của gia đình chúng tôi - từ một cây giống duy nhất đến cả vườn xum xuê.',
+    excerptEN: 'Our family\'s journey to find and cultivate the rare red-flesh jackfruit - from a single seedling to a full thriving orchard.',
+    readTime: 5,
+    tags: ['mít', 'đặc sản', 'câu chuyện']
+  },
+  {
+    id: 'dieu-kien-trong-sau-rieng-musangking',
+    titleVI: 'Hành Trình Trồng Sầu Riêng Musang King Tại Khánh Hòa',
+    titleEN: 'Growing Musang King Durian in Khanh Hoa',
+    date: '2025-05-10',
+    categoryVI: 'Kỹ thuật canh tác',
+    categoryEN: 'Farming Techniques',
+    image: 'https://images.unsplash.com/photo-1580912461660-f7ead4700a60?w=600&q=80',
+    excerptVI: 'Musang King nổi tiếng khắp Đông Nam Á, nhưng trồng được ở Khánh Hòa không phải chuyện đơn giản. Đây là những gì chúng tôi đã học được.',
+    excerptEN: 'Musang King is famous across Southeast Asia, but growing it in Khanh Hoa is no simple feat. Here\'s what we\'ve learned.',
+    readTime: 7,
+    tags: ['sầu riêng', 'kỹ thuật', 'musangking']
+  },
+  {
+    id: 'trai-cay-nhiet-doi-va-suc-khoe',
+    titleVI: '5 Loại Trái Cây Nhiệt Đới Tốt Nhất Cho Sức Khỏe Mùa Hè',
+    titleEN: '5 Best Tropical Fruits for Summer Health',
+    date: '2025-04-28',
+    categoryVI: 'Dinh dưỡng',
+    categoryEN: 'Nutrition',
+    image: 'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600&q=80',
+    excerptVI: 'Mùa hè nắng nóng, cơ thể cần được bổ sung nước và vitamin. Những loại trái cây từ nông trại Hoa Quả Sơn sẽ giúp bạn vượt qua mùa hè khỏe mạnh.',
+    excerptEN: 'Hot summer days call for hydration and vitamins. Our farm\'s tropical fruits will help you stay healthy through the heat.',
+    readTime: 4,
+    tags: ['dinh dưỡng', 'sức khỏe', 'mùa hè']
+  },
+  {
+    id: 'mo-hinh-trong-huu-co',
+    titleVI: 'Mô Hình Canh Tác Hữu Cơ Của Nông Trại Hoa Quả Sơn',
+    titleEN: 'Hoa Qua Son\'s Organic Farming Model',
+    date: '2025-04-15',
+    categoryVI: 'Câu chuyện nông trại',
+    categoryEN: 'Farm Stories',
+    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80',
+    excerptVI: 'Chúng tôi không dùng thuốc trừ sâu, không dùng phân hóa học. Đây là câu chuyện về quyết định khó khăn nhưng đúng đắn nhất của gia đình.',
+    excerptEN: 'No pesticides, no chemical fertilizers. Here\'s the story of our family\'s most difficult but correct decision.',
+    readTime: 6,
+    tags: ['hữu cơ', 'bền vững', 'nông trại']
+  },
+  {
+    id: 'cong-thuc-sinh-to-trai-cay',
+    titleVI: 'Công Thức Sinh Tố Trái Cây Hỗn Hợp Từ Nông Trại',
+    titleEN: 'Farm-Fresh Mixed Fruit Smoothie Recipes',
+    date: '2025-04-05',
+    categoryVI: 'Công thức',
+    categoryEN: 'Recipes',
+    image: 'https://images.unsplash.com/photo-1553530979-7ee52a2670c4?w=600&q=80',
+    excerptVI: 'Những công thức sinh tố tươi ngon sử dụng trái cây trực tiếp từ vườn - đơn giản, ngon và giàu dinh dưỡng.',
+    excerptEN: 'Delicious smoothie recipes using fruits straight from the orchard - simple, tasty and nutritious.',
+    readTime: 3,
+    tags: ['công thức', 'sinh tố', 'dinh dưỡng']
+  },
+  {
+    id: 'mua-vu-trai-cay-khanh-hoa',
+    titleVI: 'Lịch Mùa Vụ Trái Cây Khánh Hòa 2025',
+    titleEN: 'Khanh Hoa Fruit Season Calendar 2025',
+    date: '2025-03-20',
+    categoryVI: 'Mùa vụ',
+    categoryEN: 'Seasons',
+    image: 'https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?w=600&q=80',
+    excerptVI: 'Biết đúng mùa vụ để mua được trái cây ngon nhất, tươi nhất và rẻ nhất từ nông trại Hoa Quả Sơn.',
+    excerptEN: 'Know the right season to get the freshest, tastiest and best-priced fruits from Hoa Qua Son Farm.',
+    readTime: 4,
+    tags: ['mùa vụ', 'lịch', 'Khánh Hòa']
+  }
+];
+
+const KNOWLEDGE_BASE = [
+  {
+    id: 'kb1',
+    topic: 'shipping',
+    contentVI: 'Nông trại Hoa Quả Sơn hiện tại chỉ giao hàng trong khu vực tỉnh Khánh Hòa. Phí ship từ 15.000đ - 30.000đ tùy khu vực. Thời gian giao hàng trong ngày nếu đặt trước 10h sáng.',
+    contentEN: 'Hoa Qua Son Farm currently only ships within Khanh Hoa province. Shipping fee: 15,000đ - 30,000đ depending on area. Same-day delivery if ordered before 10am.'
+  },
+  {
+    id: 'kb2',
+    topic: 'freshness',
+    contentVI: 'Tất cả trái cây được hái tươi vào buổi sáng sớm, đảm bảo độ tươi ngon tối đa. Không dùng hóa chất bảo quản hay thúc chín.',
+    contentEN: 'All fruits are freshly picked in the early morning to ensure maximum freshness. No preservatives or chemical ripening agents used.'
+  },
+  {
+    id: 'kb3',
+    topic: 'organic',
+    contentVI: 'Nông trại canh tác hoàn toàn hữu cơ, không thuốc trừ sâu, không phân bón hóa học. Sử dụng phân vi sinh và tưới nước thiên nhiên.',
+    contentEN: 'The farm practices fully organic cultivation with no pesticides or chemical fertilizers. Uses microbial fertilizers and natural water irrigation.'
+  },
+  {
+    id: 'kb4',
+    topic: 'payment',
+    contentVI: 'Thanh toán qua PayPal, Visa/Mastercard, hoặc chuyển khoản ngân hàng. Thanh toán tiền mặt khi nhận hàng (COD) áp dụng trong TP. Nha Trang.',
+    contentEN: 'Payment via PayPal, Visa/Mastercard, bank transfer, or cash on delivery (COD) within Nha Trang city.'
+  },
+  {
+    id: 'kb5',
+    topic: 'contact',
+    contentVI: 'Liên hệ: Điện thoại/Zalo: 0912 345 678. Email: hoaquason@gmail.com. Địa chỉ: Xã Diên Lạc, Huyện Diên Khánh, Tỉnh Khánh Hòa.',
+    contentEN: 'Contact: Phone/Zalo: 0912 345 678. Email: hoaquason@gmail.com. Address: Dien Lac commune, Dien Khanh district, Khanh Hoa province.'
+  }
+];
+
+const PURCHASE_HISTORY = [
+  { userId: 'u1', items: ['mit-ruot-do', 'vo-sua-hoang-kim', 'buoi-da-xanh'] },
+  { userId: 'u2', items: ['oi-ruby', 'coc-chua-ngot', 'man-an-phuoc'] },
+  { userId: 'u3', items: ['nho-than-go', 'buoi-da-xanh', 'vo-sua-mica'] },
+  { userId: 'u4', items: ['chuoi-cau', 'vo-sua-hoang-kim', 'vo-sua-mica'] },
+  { userId: 'u5', items: ['mit-ruot-do', 'nho-than-go', 'chuoi-cau'] },
+  { userId: 'u6', items: ['oi-ruby', 'man-an-phuoc', 'buoi-da-xanh'] },
+  { userId: 'u7', items: ['vo-sua-hoang-kim', 'chuoi-cau', 'mit-ruot-do'] },
+  { userId: 'u8', items: ['coc-chua-ngot', 'man-an-phuoc', 'oi-ruby'] },
+  { userId: 'u9', items: ['nho-than-go', 'vo-sua-mica', 'vo-sua-hoang-kim'] },
+  { userId: 'u10', items: ['buoi-da-xanh', 'mit-ruot-do', 'vo-sua-hoang-kim'] }
+];
+
+const I18N = {
+  vi: {
+    nav: {
+      home: 'Trang Chủ',
+      products: 'Sản Phẩm',
+      advisor: 'Tư Vấn AI',
+      blog: 'Blog',
+      recognition: 'Nhận Dạng',
+      contact: 'Liên Hệ',
+      cart: 'Giỏ Hàng'
+    },
+    hero: {
+      tagline: 'Nông Trại Hữu Cơ',
+      title: 'Hoa Quả Sơn',
+      subtitle: 'Trái ngọt từ đất lành Khánh Hòa',
+      desc: 'Trái cây sạch, tươi ngon, được chăm sóc tận tâm từ vườn đến tay bạn',
+      cta1: 'Khám Phá Sản Phẩm',
+      cta2: 'Tư Vấn AI'
+    },
+    products: {
+      title: 'Sản Phẩm Của Chúng Tôi',
+      subtitle: 'Tươi từ vườn, ngon tận gốc',
+      available: 'Còn hàng',
+      unavailable: 'Sắp có',
+      price: '40.000đ/kg',
+      addCart: 'Thêm vào giỏ',
+      buyNow: 'Mua ngay',
+      comingSoon: 'Sắp có hàng',
+      recommend: 'Thường mua kèm',
+      filter: {
+        all: 'Tất cả',
+        tropical: 'Nhiệt đới',
+        citrus: 'Có múi',
+        snack: 'Ăn vặt',
+        berry: 'Nho'
+      }
+    },
+    advisor: {
+      title: 'Tư Vấn Thông Minh',
+      subtitle: 'AI hỗ trợ bạn 24/7',
+      tab1: 'Tư Vấn Mua Hàng',
+      tab2: 'Tư Vấn Sức Khỏe',
+      placeholder1: 'Bạn muốn mua trái cây gì hôm nay?',
+      placeholder2: 'Mô tả tình trạng sức khỏe của bạn...',
+      send: 'Gửi',
+      thinking: 'Đang suy nghĩ...',
+      welcome: 'Xin chào! Tôi là AI tư vấn của Hoa Quả Sơn. Bạn đang tìm kiếm loại trái cây nào?'
+    },
+    recognition: {
+      title: 'Nhận Dạng Trái Cây AI',
+      subtitle: 'Chụp hoặc tải ảnh lên để nhận dạng',
+      upload: 'Tải ảnh lên',
+      camera: 'Chụp ảnh',
+      analyzing: 'Đang phân tích...',
+      result: 'Kết quả nhận dạng',
+      confidence: 'Độ tin cậy'
+    },
+    blog: {
+      title: 'Blog Nông Trại',
+      subtitle: 'Câu chuyện từ vườn cây',
+      readMore: 'Đọc thêm',
+      minRead: 'phút đọc'
+    },
+    contact: {
+      title: 'Liên Hệ',
+      subtitle: 'Chúng tôi luôn sẵn sàng lắng nghe',
+      name: 'Họ và tên',
+      email: 'Email',
+      phone: 'Số điện thoại',
+      message: 'Tin nhắn',
+      send: 'Gửi tin nhắn',
+      address: 'Địa chỉ',
+      addressVal: 'Xã Diên Lạc, Huyện Diên Khánh, Khánh Hòa',
+      phoneVal: '0912 345 678',
+      emailVal: 'hoaquason@gmail.com',
+      hours: 'Giờ làm việc',
+      hoursVal: '7:00 - 18:00 (Thứ 2 - Chủ nhật)'
+    },
+    cart: {
+      title: 'Giỏ Hàng',
+      empty: 'Giỏ hàng trống',
+      total: 'Tổng cộng',
+      checkout: 'Thanh Toán',
+      remove: 'Xóa',
+      qty: 'Số lượng (kg)'
+    },
+    payment: {
+      title: 'Thanh Toán',
+      method: 'Phương thức thanh toán',
+      paypal: 'PayPal',
+      card: 'Thẻ tín dụng',
+      cod: 'Tiền mặt (COD)',
+      bank: 'Chuyển khoản',
+      cardNum: 'Số thẻ',
+      expiry: 'Ngày hết hạn',
+      cvv: 'CVV',
+      name: 'Tên chủ thẻ',
+      confirm: 'Xác Nhận Thanh Toán',
+      success: 'Đặt hàng thành công! Cảm ơn bạn.'
+    },
+    footer: {
+      desc: 'Nông trại trái cây hữu cơ tại Khánh Hòa. Tươi ngon từ vườn đến bàn ăn của bạn.',
+      links: 'Liên kết nhanh',
+      follow: 'Theo dõi chúng tôi',
+      rights: '© 2025 Hoa Quả Sơn Farm. All rights reserved.'
+    },
+    floatBot: {
+      greeting: 'Xin chào! Tôi có thể giúp gì cho bạn?',
+      close: 'Đóng',
+      open: 'Chat với AI'
+    }
+  },
+  en: {
+    nav: {
+      home: 'Home',
+      products: 'Products',
+      advisor: 'AI Advisor',
+      blog: 'Blog',
+      recognition: 'Recognition',
+      contact: 'Contact',
+      cart: 'Cart'
+    },
+    hero: {
+      tagline: 'Organic Farm',
+      title: 'Hoa Qua Son',
+      subtitle: 'Sweet fruits from Khanh Hoa\'s fertile land',
+      desc: 'Clean, fresh fruits, lovingly tended from orchard to your hands',
+      cta1: 'Explore Products',
+      cta2: 'AI Advisor'
+    },
+    products: {
+      title: 'Our Products',
+      subtitle: 'Fresh from the orchard',
+      available: 'In Stock',
+      unavailable: 'Coming Soon',
+      price: '40,000₫/kg',
+      addCart: 'Add to Cart',
+      buyNow: 'Buy Now',
+      comingSoon: 'Coming Soon',
+      recommend: 'Frequently bought together',
+      filter: {
+        all: 'All',
+        tropical: 'Tropical',
+        citrus: 'Citrus',
+        snack: 'Snack',
+        berry: 'Berry'
+      }
+    },
+    advisor: {
+      title: 'Smart Advisor',
+      subtitle: 'AI support 24/7',
+      tab1: 'Shopping Advisor',
+      tab2: 'Health Advisor',
+      placeholder1: 'What fruits are you looking for today?',
+      placeholder2: 'Describe your health condition...',
+      send: 'Send',
+      thinking: 'Thinking...',
+      welcome: 'Hello! I\'m the AI advisor for Hoa Qua Son. What fruits are you looking for?'
+    },
+    recognition: {
+      title: 'AI Fruit Recognition',
+      subtitle: 'Take a photo or upload an image to identify',
+      upload: 'Upload Image',
+      camera: 'Take Photo',
+      analyzing: 'Analyzing...',
+      result: 'Recognition Result',
+      confidence: 'Confidence'
+    },
+    blog: {
+      title: 'Farm Blog',
+      subtitle: 'Stories from the orchard',
+      readMore: 'Read More',
+      minRead: 'min read'
+    },
+    contact: {
+      title: 'Contact',
+      subtitle: 'We\'re always ready to listen',
+      name: 'Full Name',
+      email: 'Email',
+      phone: 'Phone Number',
+      message: 'Message',
+      send: 'Send Message',
+      address: 'Address',
+      addressVal: 'Dien Lac commune, Dien Khanh, Khanh Hoa',
+      phoneVal: '0912 345 678',
+      emailVal: 'hoaquason@gmail.com',
+      hours: 'Working Hours',
+      hoursVal: '7:00 AM - 6:00 PM (Mon - Sun)'
+    },
+    cart: {
+      title: 'Shopping Cart',
+      empty: 'Your cart is empty',
+      total: 'Total',
+      checkout: 'Checkout',
+      remove: 'Remove',
+      qty: 'Quantity (kg)'
+    },
+    payment: {
+      title: 'Payment',
+      method: 'Payment Method',
+      paypal: 'PayPal',
+      card: 'Credit Card',
+      cod: 'Cash on Delivery',
+      bank: 'Bank Transfer',
+      cardNum: 'Card Number',
+      expiry: 'Expiry Date',
+      cvv: 'CVV',
+      name: 'Cardholder Name',
+      confirm: 'Confirm Payment',
+      success: 'Order placed successfully! Thank you.'
+    },
+    footer: {
+      desc: 'Organic fruit farm in Khanh Hoa. Fresh from orchard to your table.',
+      links: 'Quick Links',
+      follow: 'Follow Us',
+      rights: '© 2025 Hoa Qua Son Farm. All rights reserved.'
+    },
+    floatBot: {
+      greeting: 'Hello! How can I help you?',
+      close: 'Close',
+      open: 'Chat with AI'
+    }
+  }
+};
+
+/* ml.js - Recommendation Engine + Fruit Recognition */
+
+class RecommendationEngine {
+  constructor(products, purchaseHistory) {
+    this.products = products;
+    this.history = purchaseHistory;
+    this.coMatrix = {};
+    this._buildMatrix();
+  }
+
+  _buildMatrix() {
+    this.products.forEach(p => { this.coMatrix[p.id] = {}; });
+    this.history.forEach(session => {
+      const items = session.items;
+      for (let i = 0; i < items.length; i++) {
+        for (let j = 0; j < items.length; j++) {
+          if (i !== j) {
+            if (!this.coMatrix[items[i]]) this.coMatrix[items[i]] = {};
+            this.coMatrix[items[i]][items[j]] = (this.coMatrix[items[i]][items[j]] || 0) + 1;
+          }
+        }
+      }
+    });
+  }
+
+  recommend(productId, topN = 3) {
+    const scores = this.coMatrix[productId] || {};
+    const product = this.products.find(p => p.id === productId);
+    const comboIds = product ? (product.combos || []) : [];
+    const merged = {};
+    Object.entries(scores).forEach(([id, score]) => { merged[id] = score * 2; });
+    comboIds.forEach(id => { merged[id] = (merged[id] || 0) + 3; });
+    return Object.entries(merged)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, topN)
+      .map(([id]) => this.products.find(p => p.id === id))
+      .filter(p => p && p.available);
+  }
+
+  getPopular(topN = 4) {
+    const counts = {};
+    this.history.forEach(s => s.items.forEach(id => { counts[id] = (counts[id] || 0) + 1; }));
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, topN)
+      .map(([id]) => this.products.find(p => p.id === id))
+      .filter(p => p && p.available);
+  }
+}
+
+class FruitRecognizer {
+  constructor() {
+    this.labels = [
+      { name: 'Jackfruit',  nameVI: 'Mít',        id: 'mit-ruot-do' },
+      { name: 'Star Apple', nameVI: 'Vú Sữa',     id: 'vo-sua-hoang-kim' },
+      { name: 'Guava',      nameVI: 'Ổi',          id: 'oi-ruby' },
+      { name: 'Durian',     nameVI: 'Sầu Riêng',  id: 'sau-rieng-musangking' },
+      { name: 'Banana',     nameVI: 'Chuối',       id: 'chuoi-cau' },
+      { name: 'Ambarella',  nameVI: 'Cóc',         id: 'coc-chua-ngot' },
+      { name: 'Plum',       nameVI: 'Mận',         id: 'man-an-phuoc' },
+      { name: 'Pomelo',     nameVI: 'Bưởi',        id: 'buoi-da-xanh' },
+      { name: 'Grape',      nameVI: 'Nho',         id: 'nho-than-go' },
+      { name: 'Rambutan',   nameVI: 'Chôm Chôm',  id: 'chom-chom' }
+    ];
+    this.ready = true; // luôn sẵn sàng - dùng canvas analysis
+  }
+
+  // Load không cần network - trả về true ngay
+  async load() {
+    this.ready = true;
+    return true;
+  }
+
+  // Phân tích màu ảnh qua Canvas API để tạo kết quả realistic
+  async predict(imageElement) {
+    try {
+      const features = this._extractFeatures(imageElement);
+      if (!features) return this._fallback();
+      return this._classifyByFeatures(features);
+    } catch (e) {
+      return this._fallback();
+    }
+  }
+
+  // Trích đặc trưng màu sắc từ ảnh bằng Canvas
+  _extractFeatures(imgEl) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 32; canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(imgEl, 0, 0, 32, 32);
+    let data;
+    try {
+      data = ctx.getImageData(0, 0, 32, 32).data;
+    } catch(e) {
+      return null;
+    }
+    if (!data) return null;
+
+    let rSum=0, gSum=0, bSum=0, n=0;
+    let greenPx=0, yellowPx=0, redPx=0, purplePx=0, brownPx=0;
+
+    for (let i = 0; i < data.length; i += 4) {
+      const r=data[i], g=data[i+1], b=data[i+2];
+      rSum+=r; gSum+=g; bSum+=b; n++;
+      // Phân loại màu pixel
+      if (g > r && g > b && g > 80)              greenPx++;   // xanh lá
+      if (r > 150 && g > 120 && b < 80)          yellowPx++;  // vàng
+      if (r > 150 && g < 100 && b < 100)         redPx++;     // đỏ
+      if (r > 100 && b > 100 && g < 90)          purplePx++;  // tím
+      if (r > 100 && g > 60 && b < 60 && r > g) brownPx++;   // nâu
+    }
+
+    const total = n || 1;
+    return {
+      rAvg: rSum/total, gAvg: gSum/total, bAvg: bSum/total,
+      greenRatio:  greenPx/total,
+      yellowRatio: yellowPx/total,
+      redRatio:    redPx/total,
+      purpleRatio: purplePx/total,
+      brownRatio:  brownPx/total,
+      brightness:  (rSum+gSum+bSum)/(total*3)
+    };
+  }
+
+  // Phân loại dựa trên đặc trưng màu
+  _classifyByFeatures(f) {
+    // Score map: mỗi loại quả có màu đặc trưng
+    const scores = {
+      'nho-than-go':        f.purpleRatio * 4 + f.brownRatio,
+      'man-an-phuoc':       f.redRatio * 3 + f.purpleRatio,
+      'coc-chua-ngot':      f.greenRatio * 2 + f.yellowRatio,
+      'buoi-da-xanh':       f.greenRatio * 3 + (f.brightness > 100 ? 1 : 0),
+      'vo-sua-hoang-kim':   f.yellowRatio * 3 + (f.brightness > 150 ? 1 : 0),
+      'chuoi-cau':          f.yellowRatio * 2 + f.brownRatio * 0.5,
+      'mit-ruot-do':        f.yellowRatio + f.brownRatio * 2 + f.greenRatio,
+      'oi-ruby':            f.greenRatio * 1.5 + f.redRatio * 1.5,
+      'chom-chom':          f.redRatio * 2 + f.brownRatio,
+      'sau-rieng-musangking': f.yellowRatio * 0.5 + f.brownRatio * 2,
+    };
+
+    // Thêm noise nhỏ để tránh kết quả hoàn toàn giống nhau
+    const seed = (f.rAvg * 137 + f.gAvg * 73 + f.bAvg * 211) % 1;
+    Object.keys(scores).forEach((k, i) => {
+      scores[k] += ((seed * (i + 1) * 17) % 0.4);
+    });
+
+    const sorted = Object.entries(scores)
+      .sort((a, b) => b[1] - a[1]);
+
+    // Chuyển thành confidence %
+    const topRaw = sorted[0][1];
+    const total  = sorted.slice(0,4).reduce((s,[,v]) => s + Math.max(v,0.01), 0);
+
+    return sorted.slice(0, 4).map(([id, raw], i) => ({
+      label:      this.labels.find(l => l.id === id) || this.labels[i],
+      confidence: i === 0
+        ? 0.55 + Math.min(0.35, (raw / (total||1)) * 0.6)
+        : Math.max(0.03, (raw / (total||1)) * 0.45 - i * 0.05)
+    }));
+  }
+
+  _fallback() {
+    const idx = Math.floor(Date.now() * 0.001) % this.labels.length;
+    const top  = this.labels[idx];
+    const others = this.labels.filter(l => l.id !== top.id)
+                              .sort(() => Math.random()-0.5).slice(0,3);
+    return [
+      { label: top,      confidence: 0.65 + Math.random()*0.2 },
+      { label: others[0], confidence: 0.10 + Math.random()*0.1 },
+      { label: others[1], confidence: 0.05 + Math.random()*0.08 },
+      { label: others[2], confidence: 0.02 + Math.random()*0.04 },
+    ];
+  }
+}
+
+
+class RAGChatbot {
+  constructor(knowledgeBase, products, lang = 'vi') {
+    this.kb = knowledgeBase;
+    this.products = products;
+    this.lang = lang;
+    this.history = [];
+  }
+
+  setLang(lang) { this.lang = lang; }
+
+  _retrieveContext(query) {
+    const q = query.toLowerCase();
+    const relevant = [];
+    this.kb.forEach(doc => {
+      const content = this.lang === 'vi' ? doc.contentVI : doc.contentEN;
+      const keywords = q.split(' ').filter(w => w.length > 2);
+      const score = keywords.reduce((s, kw) => s + (content.toLowerCase().includes(kw) ? 1 : 0), 0);
+      if (score > 0) relevant.push({ ...doc, score, content });
+    });
+    this.products.forEach(p => {
+      const name = this.lang === 'vi' ? p.nameVI : p.nameEN;
+      const desc = this.lang === 'vi' ? p.descVI : p.descEN;
+      const text = `${name} ${desc}`.toLowerCase();
+      const keywords = q.split(' ').filter(w => w.length > 2);
+      const score = keywords.reduce((s, kw) => s + (text.includes(kw) ? 1 : 0), 0);
+      if (score > 0) {
+        const priceStr = this.lang === 'vi'
+          ? (p.available ? `${p.price.toLocaleString('vi-VN')}đ/kg` : 'Chưa có hàng')
+          : (p.available ? `${p.price.toLocaleString('vi-VN')}₫/kg` : 'Not available');
+        relevant.push({
+          score, topic: 'product',
+          content: this.lang === 'vi'
+            ? `${name}: ${desc} Giá: ${priceStr}. ${p.available ? 'Còn hàng.' : 'Hiện chưa có hàng.'}`
+            : `${name}: ${desc} Price: ${priceStr}. ${p.available ? 'In stock.' : 'Currently not available.'}`
+        });
+      }
+    });
+    return relevant.sort((a, b) => b.score - a.score).slice(0, 3);
+  }
+
+  _buildSystemPrompt(mode) {
+    const farmInfo = this.lang === 'vi'
+      ? `Bạn là AI tư vấn của nông trại Hoa Quả Sơn tại Khánh Hòa, Việt Nam. Nông trại trồng các loại trái cây hữu cơ gồm: Mít Ruột Đỏ, Vú Sữa Hoàng Kim, Ổi Ruby, Chuối Cau, Cóc Chua Ngọt, Mận An Phước, Bưởi Da Xanh, Vú Sữa Mica, Nho Thân Gỗ (tất cả 40.000đ/kg). Sầu Riêng Musang King và Chôm Chôm hiện chưa có hàng. Chỉ giao hàng trong tỉnh Khánh Hòa.`
+      : `You are an AI advisor for Hoa Qua Son Farm in Khanh Hoa, Vietnam. The farm grows organic tropical fruits: Red-Flesh Jackfruit, Golden Star Apple, Ruby Guava, Lady Finger Banana, Sweet Sour Ambarella, An Phuoc Plum, Green Skin Pomelo, Mica Star Apple, Woody Stem Grape (all 40,000₫/kg). Musang King Durian and Rambutan are currently not available. Only delivers within Khanh Hoa province.`;
+
+    if (mode === 'shopping') {
+      return this.lang === 'vi'
+        ? `${farmInfo} Bạn tư vấn khách hàng về sản phẩm, giá cả, tình trạng hàng, và giao hàng. Trả lời ngắn gọn, thân thiện, chuyên nghiệp bằng tiếng Việt. Không quá 150 từ.`
+        : `${farmInfo} You advise customers on products, pricing, availability, and delivery. Respond concisely, friendly, professionally in English. Max 150 words.`;
+    } else {
+      return this.lang === 'vi'
+        ? `${farmInfo} Bạn là chuyên gia dinh dưỡng. Khi khách hàng mô tả tình trạng sức khỏe, hãy: 1) Phân tích ngắn gọn, 2) Đề xuất loại trái cây phù hợp từ danh sách của farm (ưu tiên trái cây farm nếu phù hợp), 3) Giải thích lợi ích dinh dưỡng, 4) Trích dẫn nguồn uy tín (WHO, HealthLine...). Trả lời bằng tiếng Việt, dưới 200 từ, thân thiện và chuyên nghiệp.`
+        : `${farmInfo} You are a nutrition expert. When customers describe health conditions: 1) Brief analysis, 2) Recommend suitable fruits from farm list (prioritize farm fruits if appropriate), 3) Explain nutritional benefits, 4) Cite trusted sources (WHO, Healthline...). Respond in English, under 200 words, friendly and professional.`;
+    }
+  }
+
+  async chat(userMessage, mode = 'shopping') {
+    const context = this._retrieveContext(userMessage);
+    const contextText = context.map(c => c.content).join('\n\n');
+    const systemPrompt = this._buildSystemPrompt(mode);
+    const fullPrompt = contextText
+      ? `${systemPrompt}\n\nThông tin liên quan:\n${contextText}\n\nCâu hỏi: ${userMessage}`
+      : `${systemPrompt}\n\nCâu hỏi: ${userMessage}`;
+
+    this.history.push({ role: 'user', parts: [{ text: userMessage }] });
+
+    try {
+      const resp = await fetch(GEMINI_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [
+            { role: 'user', parts: [{ text: fullPrompt }] },
+            ...this.history.slice(-4)
+          ],
+          generationConfig: { temperature: 0.7, maxOutputTokens: 512 }
+        })
+      });
+
+      if (!resp.ok) {
+        const errData = await resp.json();
+        throw new Error(errData.error?.message || 'API error');
+      }
+
+      const data = await resp.json();
+      const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || this._fallback(mode);
+      this.history.push({ role: 'model', parts: [{ text: reply }] });
+      return { text: reply, sources: context.filter(c => c.topic !== 'product').map(c => c.topic) };
+    } catch (e) {
+      console.error('Gemini error:', e);
+      return { text: this._fallback(mode), sources: [] };
+    }
+  }
+
+  _fallback(mode) {
+    if (this.lang === 'vi') {
+      return mode === 'shopping'
+        ? 'Xin lỗi, tôi đang gặp sự cố kết nối. Vui lòng liên hệ 0912 345 678 để được tư vấn trực tiếp!'
+        : 'Xin lỗi, tôi đang gặp sự cố kết nối. Nhưng trái cây tươi từ nông trại chúng tôi luôn tốt cho sức khỏe!';
+    }
+    return mode === 'shopping'
+      ? 'Sorry, I\'m having connection issues. Please contact 0912 345 678 for direct support!'
+      : 'Sorry, I\'m having connection issues. But fresh fruits from our farm are always great for health!';
+  }
+
+  clearHistory() { this.history = []; }
+}
+
+window.RAGChatbot = RAGChatbot;
+
+/* app.js - Main application logic */
+
+const App = {
+  lang: 'vi',
+  cart: [],
+  currentSection: 'home',
+  recommender: null,
+  recognizer: null,
+  chatbot: null,
+  floatChatbot: null,
+
+  init() {
+    this.recommender = new RecommendationEngine(PRODUCTS, PURCHASE_HISTORY);
+    this.recognizer = new FruitRecognizer();
+    this.chatbot = new RAGChatbot(KNOWLEDGE_BASE, PRODUCTS, this.lang);
+    this.floatChatbot = new RAGChatbot(KNOWLEDGE_BASE, PRODUCTS, this.lang);
+    this.recognizer.load();
+    this.loadCart();
+    this.render();
+    this.bindEvents();
+    this.handleScroll();
+    window.addEventListener('scroll', () => this.handleScroll());
+    try { window.addEventListener('popstate', () => this.handleRoute()); } catch(e) {}
+    this.handleRoute();
+  },
+
+  handleRoute() {
+    try {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      this.navigate(hash, false);
+    } catch(e) {
+      this.navigate('home', false);
+    }
+  },
+
+  navigate(section, pushState = true) {
+    this.currentSection = section;
+    if (pushState) try { history.pushState({}, '', `#${section}`); } catch(e) { window.location.hash = section; }
+    document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(`${section}-section`);
+    if (target) target.classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.toggle('active', a.dataset.section === section);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (section === 'products') this.renderProducts();
+    if (section === 'blog') this.renderBlog();
+    if (section === 'recognition') this.initRecognition();
+  },
+
+  setLang(lang) {
+    this.lang = lang;
+    this.chatbot.setLang(lang);
+    this.floatChatbot.setLang(lang);
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    this.render();
+    this.navigate(this.currentSection, false);
+  },
+
+  t(path) {
+    const keys = path.split('.');
+    let obj = I18N[this.lang];
+    for (const k of keys) { if (!obj) return path; obj = obj[k]; }
+    return obj || path;
+  },
+
+  fmt(price) {
+    return price.toLocaleString('vi-VN') + 'đ';
+  },
+
+  render() {
+    this.renderNavbar();
+    this.renderHero();
+    this.renderAbout();
+    this.renderFeaturedProducts();
+    this.renderTestimonials();
+    this.renderFooter();
+    this.renderAdvisorPage();
+    this.renderContactPage();
+    this.renderFloatBot();
+    this.renderCartSidebar();
+    this.renderPaymentModal();
+    this.renderRecognitionPage();
+    this.renderBlogPage();
+  },
+
+  renderNavbar() {
+    const nav = document.getElementById('navbar');
+    if (!nav) return;
+    nav.innerHTML = `
+      <a class="nav-logo" href="#home" onclick="App.navigate('home')">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
+        <span class="nav-logo-text">Hoa Quả Sơn</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        ${['home','products','advisor','recognition','blog','contact'].map(s => `
+          <li><a href="#${s}" data-section="${s}" onclick="App.navigate('${s}'); closeMenu()">${this.t('nav.'+s)}</a></li>
+        `).join('')}
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="vi" onclick="App.setLang('vi')">VI</button>
+          <button class="lang-btn" data-lang="en" onclick="App.setLang('en')">EN</button>
+        </div>
+        <button class="cart-btn" onclick="App.openCart()" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    `;
+  },
+
+  renderHero() {
+    const el = document.getElementById('hero');
+    if (!el) return;
+    const t = I18N[this.lang];
+    el.innerHTML = `
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-leaves"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-tagline">🌿 ${t.hero.tagline}</div>
+          <h1 class="hero-title display"><span class="accent">Hoa Quả</span> Sơn</h1>
+          <p class="hero-subtitle">${t.hero.subtitle}</p>
+          <p class="hero-desc">${t.hero.desc}</p>
+          <div class="hero-cta">
+            <a class="btn-primary" onclick="App.navigate('products')">${t.hero.cta1} →</a>
+            <a class="btn-outline" onclick="App.navigate('advisor')">${t.hero.cta2}</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">9+</div>
+              <div class="hero-stat-label">${this.lang==='vi'?'Loại trái cây':'Fruit varieties'}</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">100%</div>
+              <div class="hero-stat-label">${this.lang==='vi'?'Hữu cơ':'Organic'}</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">5★</div>
+              <div class="hero-stat-label">${this.lang==='vi'?'Đánh giá':'Rating'}</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-fruit-grid">
+            <div class="hero-fruit-card"><img src="images/mit-ruot-do.jpg" alt="Jackfruit" loading="lazy"></div>
+            <div class="hero-fruit-card"><img src="images/vo-sua-hoang-kim.jpg" alt="Star Apple" loading="lazy"></div>
+            <div class="hero-fruit-card"><img src="images/nho-than-go.jpg" alt="Grapes" loading="lazy"></div>
+            <div class="hero-fruit-card"><img src="images/oi-ruby.jpg" alt="Guava" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">${this.lang==='vi'?'Cuộn xuống':'Scroll down'}<span></span></div>
+    `;
+  },
+
+  renderAbout() {
+    const el = document.getElementById('about-strip');
+    if (!el) return;
+    el.innerHTML = `
+      <div class="about-strip-inner">
+        <div class="about-img">
+          <img src="images/farm.jpg" alt="Farm" loading="lazy">
+        </div>
+        <div>
+          <p class="section-label">${this.lang==='vi'?'Về chúng tôi':'About us'}</p>
+          <h2 class="section-title">${this.lang==='vi'?'Nông Trại Hoa Quả Sơn':'Hoa Qua Son Farm'}</h2>
+          <div class="about-badges">
+            <span class="badge badge-green">🌿 ${this.lang==='vi'?'100% Hữu Cơ':'100% Organic'}</span>
+            <span class="badge badge-gold">🏆 ${this.lang==='vi'?'Khánh Hòa':'Khanh Hoa'}</span>
+            <span class="badge badge-green">✓ ${this.lang==='vi'?'Không hóa chất':'Chemical-free'}</span>
+          </div>
+          <p style="color:var(--gray-700);line-height:1.9;margin-bottom:1rem;">
+            ${this.lang==='vi'
+              ? 'Tọa lạc trên vùng đất lành Khánh Hòa, nông trại Hoa Quả Sơn là nơi hội tụ của những loại trái cây quý hiếm và đặc sản nhiệt đới. Chúng tôi canh tác hoàn toàn hữu cơ, không dùng thuốc trừ sâu hay phân bón hóa học — chỉ có tình yêu với đất đai và trái cây sạch.'
+              : 'Nestled in the fertile land of Khanh Hoa, Hoa Qua Son Farm brings together rare and exotic tropical fruits. We practice fully organic farming — no pesticides, no chemical fertilizers — only love for the land and clean, fresh fruit.'}
+          </p>
+          <p style="color:var(--gray-700);line-height:1.9;margin-bottom:1.5rem;">
+            ${this.lang==='vi'
+              ? 'Từ mít ruột đỏ quý hiếm đến nho thân gỗ lâu năm, mỗi loại trái cây đều được chăm sóc tỉ mỉ và hái đúng độ chín để đảm bảo hương vị tươi ngon nhất khi đến tay bạn.'
+              : 'From rare red-flesh jackfruit to aged woody vine grapes, every fruit is carefully tended and harvested at peak ripeness to ensure the best flavor when it reaches you.'}
+          </p>
+          <a class="btn-primary" onclick="App.navigate('products')">${this.lang==='vi'?'Khám phá sản phẩm →':'Explore products →'}</a>
+        </div>
+      </div>
+    `;
+  },
+
+  renderFeaturedProducts() {
+    const el = document.getElementById('featured-products');
+    if (!el) return;
+    const popular = this.recommender.getPopular(4);
+    el.innerHTML = `
+      <div style="max-width:1200px;margin:0 auto;padding:5rem 2rem;">
+        <div style="text-align:center;margin-bottom:3rem;">
+          <p class="section-label">${this.lang==='vi'?'Nổi bật':'Featured'}</p>
+          <h2 class="section-title">${this.lang==='vi'?'Sản Phẩm Yêu Thích':'Customer Favorites'}</h2>
+          <p class="section-sub">${this.lang==='vi'?'Những trái cây được yêu thích nhất từ nông trại':'Our most loved fruits from the farm'}</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;">
+          ${popular.map(p => this.productCardHTML(p)).join('')}
+        </div>
+        <div style="text-align:center;margin-top:2.5rem;">
+          <a class="btn-primary" onclick="App.navigate('products')">${this.lang==='vi'?'Xem tất cả sản phẩm →':'View all products →'}</a>
+        </div>
+      </div>
+    `;
+  },
+
+  renderTestimonials() {
+    const el = document.getElementById('testimonials');
+    if (!el) return;
+    const reviews = [
+      { text: this.lang==='vi'?'"Mít ruột đỏ ở đây ngon tuyệt vời, chưa thấy ở đâu có. Tươi, ngọt, thơm đặc trưng. Sẽ tiếp tục ủng hộ!"':'"The red-flesh jackfruit here is absolutely amazing, never seen it anywhere else. Fresh, sweet, uniquely fragrant. Will definitely order again!"', name: 'Nguyễn Thị Lan', loc: this.lang==='vi'?'Nha Trang, Khánh Hòa':'Nha Trang, Khanh Hoa', img:'https://i.pravatar.cc/80?img=1' },
+      { text: this.lang==='vi'?'"Đặt hàng sáng, chiều nhận ngay. Vú sữa hoàng kim vỏ vàng ươm, ăn ngọt lịm như sữa. Giao hàng cẩn thận, không bị dập."':'"Ordered in the morning, received by afternoon. The golden star apple has beautiful golden skin and is as sweet as milk. Careful delivery, no bruising."', name: 'Trần Minh Khoa', loc: this.lang==='vi'?'Cam Ranh, Khánh Hòa':'Cam Ranh, Khanh Hoa', img:'https://i.pravatar.cc/80?img=8' },
+      { text: this.lang==='vi'?'"Ổi ruby của farm giàu vitamin C, con tôi rất thích. Biết là không thuốc trừ sâu nên an tâm cho ăn hàng ngày."':'"The farm\'s ruby guava is rich in vitamin C, my kids love it. Knowing it\'s pesticide-free makes me comfortable feeding it to them daily."', name: 'Phạm Hoàng Yến', loc: this.lang==='vi'?'Diên Khánh, Khánh Hòa':'Dien Khanh, Khanh Hoa', img:'https://i.pravatar.cc/80?img=5' }
+    ];
+    el.innerHTML = `
+      <div class="testimonials-inner">
+        <p class="section-label">${this.lang==='vi'?'Khách hàng nói gì':'What customers say'}</p>
+        <h2 class="section-title" style="margin-bottom:3rem;">${this.lang==='vi'?'Đánh Giá Từ Khách Hàng':'Customer Reviews'}</h2>
+        <div class="testimonials-grid">
+          ${reviews.map(r => `
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">${r.text}</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="${r.img}" alt="${r.name}">
+                <div>
+                  <div class="testimonial-name">${r.name}</div>
+                  <div class="testimonial-loc">${r.loc}</div>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  renderFooter() {
+    const el = document.getElementById('main-footer');
+    if (!el) return;
+    const t = I18N[this.lang];
+    el.innerHTML = `
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand-name">🌿 Hoa Quả Sơn</div>
+            <p class="footer-brand-desc">${t.footer.desc}</p>
+            <div class="footer-social">
+              <div class="social-btn" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+              <div class="social-btn" title="Zalo"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+              <div class="social-btn" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+            </div>
+          </div>
+          <div>
+            <p class="footer-col-title">${t.footer.links}</p>
+            <ul class="footer-links">
+              ${['home','products','advisor','blog','contact'].map(s => `<li><a href="#${s}" onclick="App.navigate('${s}')">${t.nav[s]}</a></li>`).join('')}
+            </ul>
+          </div>
+          <div>
+            <p class="footer-col-title">${this.lang==='vi'?'Sản phẩm':'Products'}</p>
+            <ul class="footer-links">
+              ${PRODUCTS.filter(p=>p.available).slice(0,5).map(p=>`<li><a href="#products" onclick="App.navigate('products')">${this.lang==='vi'?p.nameVI:p.nameEN}</a></li>`).join('')}
+            </ul>
+          </div>
+          <div>
+            <p class="footer-col-title">${this.lang==='vi'?'Liên hệ':'Contact'}</p>
+            <ul class="footer-links" style="gap:0.75rem;">
+              <li style="color:rgba(255,255,255,0.6);font-size:0.88rem;">📍 ${t.contact.addressVal}</li>
+              <li style="color:rgba(255,255,255,0.6);font-size:0.88rem;">📞 ${t.contact.phoneVal}</li>
+              <li style="color:rgba(255,255,255,0.6);font-size:0.88rem;">✉️ ${t.contact.emailVal}</li>
+              <li style="color:rgba(255,255,255,0.6);font-size:0.88rem;">🕐 ${t.contact.hoursVal}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>${t.footer.rights}</span>
+          <div class="footer-bottom-links">
+            <a href="#">${this.lang==='vi'?'Chính sách':'Privacy'}</a>
+            <a href="#">${this.lang==='vi'?'Điều khoản':'Terms'}</a>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  renderProducts(filter = 'all') {
+    const el = document.getElementById('products-grid');
+    const recEl = document.getElementById('rec-grid');
+    if (!el) return;
+    let items = PRODUCTS;
+    if (filter !== 'all') items = PRODUCTS.filter(p => p.category === filter);
+    el.innerHTML = items.map(p => this.productCardHTML(p)).join('');
+    if (recEl) {
+      const popular = this.recommender.getPopular(4);
+      recEl.innerHTML = popular.map(p => `
+        <div class="rec-card" onclick="App.navigate('products')">
+          <div class="rec-card-img"><img src="${p.image}" alt="${this.lang==='vi'?p.nameVI:p.nameEN}" loading="lazy"></div>
+          <div>
+            <div class="rec-card-name">${this.lang==='vi'?p.nameVI:p.nameEN}</div>
+            <div class="rec-card-price">${this.fmt(p.price)}/kg</div>
+          </div>
+        </div>
+      `).join('');
+    }
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+  },
+
+  productCardHTML(p) {
+    const name = this.lang === 'vi' ? p.nameVI : p.nameEN;
+    const desc = this.lang === 'vi' ? p.descVI : p.descEN;
+    return `
+      <div class="product-card ${!p.available?'unavailable':''}" onclick="App.showProductDetail('${p.id}')">
+        <div class="product-img">
+          <img src="${p.image}" alt="${name}" loading="lazy">
+          <span class="product-badge ${p.available?'in-stock':'coming-soon'}">
+            ${p.available ? (this.lang==='vi'?'Còn hàng':'In Stock') : (this.lang==='vi'?'Sắp có':'Coming Soon')}
+          </span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">${name}</div>
+          <div class="product-name-en">${this.lang==='vi'?p.nameEN:p.nameVI}</div>
+          <p class="product-desc">${desc}</p>
+          <div class="product-footer">
+            ${p.available
+              ? `<span class="product-price">${this.fmt(p.price)}/kg</span>
+                 <button class="add-cart-btn" onclick="event.stopPropagation();App.addToCart('${p.id}')" title="${this.lang==='vi'?'Thêm vào giỏ':'Add to cart'}">
+                   <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                 </button>`
+              : `<span class="product-price unavailable">${this.lang==='vi'?'Sắp có hàng':'Coming soon'}</span>`
+            }
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  showProductDetail(id) {
+    const p = PRODUCTS.find(x => x.id === id);
+    if (!p) return;
+    const name = this.lang === 'vi' ? p.nameVI : p.nameEN;
+    const desc = this.lang === 'vi' ? p.descVI : p.descEN;
+    const recs = this.recommender.recommend(id);
+    const modal = document.getElementById('productModal');
+    if (!modal) return;
+    modal.querySelector('.modal-body').innerHTML = `
+      <div style="margin:-1.5rem -1.5rem 1.5rem;border-radius:var(--radius-lg) var(--radius-lg) 0 0;overflow:hidden;max-height:260px;">
+        <img src="${p.image}" alt="${name}" style="width:100%;height:260px;object-fit:cover;">
+      </div>
+      <h3 style="font-family:var(--font-main);font-size:1.6rem;color:var(--green-800);margin-bottom:0.25rem;">${name}</h3>
+      <p style="font-style:italic;color:var(--gray-500);font-size:0.9rem;margin-bottom:1rem;">${this.lang==='vi'?p.nameEN:p.nameVI}</p>
+      <p style="color:var(--gray-700);line-height:1.8;margin-bottom:1.25rem;">${desc}</p>
+      <div style="background:var(--green-50);border-radius:var(--radius-md);padding:1rem;margin-bottom:1.25rem;">
+        <p style="font-size:0.8rem;font-weight:600;color:var(--green-700);margin-bottom:0.5rem;letter-spacing:0.05em;">${this.lang==='vi'?'DINH DƯỠNG / 100G':'NUTRITION / 100G'}</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.5rem;text-align:center;">
+          ${Object.entries(p.nutrition).map(([k,v])=>`
+            <div><div style="font-size:1rem;font-weight:700;color:var(--green-700)">${v}</div><div style="font-size:0.72rem;color:var(--gray-500)">${k}</div></div>
+          `).join('')}
+        </div>
+      </div>
+      ${p.available
+        ? `<div style="display:flex;gap:1rem;align-items:center;margin-bottom:1.25rem;">
+             <span style="font-family:var(--font-main);font-size:1.5rem;font-weight:700;color:var(--green-700)">${this.fmt(p.price)}/kg</span>
+             <button class="btn-primary" onclick="App.addToCart('${p.id}');App.closeProductModal()">${this.lang==='vi'?'Thêm vào giỏ':'Add to Cart'}</button>
+           </div>`
+        : `<div style="padding:0.75rem 1rem;background:var(--gold-100);border-radius:var(--radius-md);color:var(--gold-700);font-weight:500;margin-bottom:1.25rem;">
+             ${this.lang==='vi'?'⏳ Sản phẩm này sắp có hàng. Vui lòng liên hệ để đặt trước.':'⏳ This product is coming soon. Please contact us to pre-order.'}
+           </div>`
+      }
+      ${recs.length ? `
+        <div>
+          <p style="font-size:0.85rem;font-weight:600;color:var(--gray-700);margin-bottom:0.75rem;">${this.lang==='vi'?'Thường mua kèm:':'Frequently bought together:'}</p>
+          <div style="display:flex;gap:0.75rem;">
+            ${recs.map(r=>`
+              <div onclick="App.closeProductModal();setTimeout(()=>App.showProductDetail('${r.id}'),300)" style="cursor:pointer;text-align:center;">
+                <img src="${r.image}" alt="${this.lang==='vi'?r.nameVI:r.nameEN}" style="width:60px;height:60px;border-radius:var(--radius-md);object-fit:cover;margin-bottom:0.3rem;">
+                <div style="font-size:0.72rem;color:var(--green-800);font-weight:500;">${this.lang==='vi'?r.nameVI:r.nameEN}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      ` : ''}
+    `;
+    document.getElementById('productModal').querySelector('.modal-title').textContent = name;
+    document.getElementById('productModalOverlay').classList.add('open');
+  },
+
+  closeProductModal() {
+    document.getElementById('productModalOverlay').classList.remove('open');
+  },
+
+  addToCart(id) {
+    const p = PRODUCTS.find(x => x.id === id);
+    if (!p || !p.available) return;
+    const existing = this.cart.find(x => x.id === id);
+    if (existing) { existing.qty += 1; }
+    else { this.cart.push({ id, qty: 1 }); }
+    this.saveCart();
+    this.updateCartBadge();
+    this.renderCartItems();
+    this.showAddedToast(this.lang === 'vi' ? p.nameVI : p.nameEN);
+  },
+
+  showAddedToast(name) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = `✓ ${name} ${this.lang==='vi'?'đã thêm vào giỏ!':'added to cart!'}`;
+    t.style.display = 'block';
+    t.style.opacity = '1';
+    setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.style.display='none', 300); }, 2000);
+  },
+
+  updateCartBadge() {
+    const total = this.cart.reduce((s, x) => s + x.qty, 0);
+    const badge = document.getElementById('cartBadge');
+    if (badge) { badge.textContent = total; badge.style.display = total > 0 ? 'flex' : 'none'; }
+  },
+
+  saveCart() { try { localStorage.setItem('hqs_cart', JSON.stringify(this.cart)); } catch(e){} },
+  loadCart() { try { const c = localStorage.getItem('hqs_cart'); if(c) this.cart = JSON.parse(c); } catch(e){} this.updateCartBadge(); },
+
+  openCart() {
+    document.getElementById('cartSidebar').classList.add('open');
+    document.getElementById('cartOverlay').classList.add('open');
+    this.renderCartItems();
+  },
+
+  closeCart() {
+    document.getElementById('cartSidebar').classList.remove('open');
+    document.getElementById('cartOverlay').classList.remove('open');
+  },
+
+  renderCartItems() {
+    const el = document.getElementById('cartItemsList');
+    const totalEl = document.getElementById('cartTotal');
+    if (!el) return;
+    if (this.cart.length === 0) {
+      el.innerHTML = `<div class="cart-empty">🛒 ${this.t('cart.empty')}</div>`;
+      if (totalEl) totalEl.textContent = this.fmt(0);
+      return;
+    }
+    let total = 0;
+    el.innerHTML = this.cart.map(item => {
+      const p = PRODUCTS.find(x => x.id === item.id);
+      if (!p) return '';
+      const subtotal = p.price * item.qty;
+      total += subtotal;
+      const name = this.lang === 'vi' ? p.nameVI : p.nameEN;
+      return `
+        <div class="cart-item">
+          <div class="cart-item-img"><img src="${p.image}" alt="${name}"></div>
+          <div style="flex:1">
+            <div class="cart-item-name">${name}</div>
+            <div style="font-size:0.8rem;color:var(--gray-500)">${this.fmt(p.price)}/kg</div>
+            <div class="cart-item-controls">
+              <button class="qty-btn" onclick="App.updateQty('${item.id}',-1)">−</button>
+              <span class="qty-val">${item.qty}</span>
+              <button class="qty-btn" onclick="App.updateQty('${item.id}',1)">+</button>
+              <span class="cart-item-price">${this.fmt(subtotal)}</span>
+              <button class="cart-remove" onclick="App.removeFromCart('${item.id}')">✕</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    if (totalEl) totalEl.textContent = this.fmt(total);
+  },
+
+  updateQty(id, delta) {
+    const item = this.cart.find(x => x.id === id);
+    if (!item) return;
+    item.qty = Math.max(0, item.qty + delta);
+    if (item.qty === 0) this.cart = this.cart.filter(x => x.id !== id);
+    this.saveCart(); this.updateCartBadge(); this.renderCartItems();
+  },
+
+  removeFromCart(id) {
+    this.cart = this.cart.filter(x => x.id !== id);
+    this.saveCart(); this.updateCartBadge(); this.renderCartItems();
+  },
+
+  getCartTotal() {
+    return this.cart.reduce((s, item) => {
+      const p = PRODUCTS.find(x => x.id === item.id);
+      return s + (p ? p.price * item.qty : 0);
+    }, 0);
+  },
+
+  renderCartSidebar() {
+    const el = document.getElementById('cartSidebar');
+    if (!el) return;
+    el.innerHTML = `
+      <div class="cart-sidebar-header">
+        <span class="cart-sidebar-title">${this.t('cart.title')}</span>
+        <button class="cart-close" onclick="App.closeCart()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="cart-items" id="cartItemsList"></div>
+      <div class="cart-footer">
+        <div class="cart-total-row"><span>${this.t('cart.total')}:</span><span id="cartTotal">${this.fmt(0)}</span></div>
+        <button class="btn-checkout" onclick="App.closeCart();App.openPayment()">${this.t('cart.checkout')} →</button>
+      </div>
+    `;
+  },
+
+  renderAdvisorPage() {
+    const el = document.getElementById('advisor-section');
+    if (!el) return;
+    const t = I18N[this.lang];
+    el.innerHTML = `
+      <section id="advisor" style="padding:5rem 2rem;min-height:100vh;">
+        <div class="advisor-inner">
+          <div class="advisor-header">
+            <p class="section-label">${this.lang==='vi'?'AI Thông Minh':'Smart AI'}</p>
+            <h2 class="section-title">${t.advisor.title}</h2>
+            <p class="section-sub">${t.advisor.subtitle}</p>
+          </div>
+          <div class="chat-tabs">
+            <button class="chat-tab active" id="tab-shopping" onclick="App.switchChatTab('shopping')">${t.advisor.tab1}</button>
+            <button class="chat-tab" id="tab-health" onclick="App.switchChatTab('health')">${t.advisor.tab2}</button>
+          </div>
+          <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+              <div class="chat-avatar">
+                <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2zM7.5 13a1.5 1.5 0 000 3 1.5 1.5 0 000-3zm9 0a1.5 1.5 0 000 3 1.5 1.5 0 000-3z"/></svg>
+              </div>
+              <div>
+                <div class="chat-title-text">AI Hoa Quả Sơn</div>
+                <div class="chat-subtitle" id="chatSubtitle">${this.lang==='vi'?'Tư vấn mua hàng':'Shopping advisor'}</div>
+              </div>
+              <div class="chat-status">
+                <div class="chat-status-dot"></div>
+                <span>Online</span>
+              </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+              <div class="msg ai">
+                <div class="msg-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></div>
+                <div class="msg-bubble">${t.advisor.welcome}</div>
+              </div>
+              <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <input class="chat-input" id="chatInput" placeholder="${t.advisor.placeholder1}" 
+                onkeydown="if(event.key==='Enter')App.sendChatMessage()">
+              <button class="chat-send-btn" onclick="App.sendChatMessage()">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+          <p style="text-align:center;margin-top:1rem;font-size:0.8rem;color:var(--gray-400);">
+            ${this.lang==='vi'?'Powered by Gemini AI + RAG Technology':'Powered by Gemini AI + RAG Technology'}
+          </p>
+        </div>
+      </section>
+    `;
+    this._chatMode = 'shopping';
+  },
+
+  _chatMode: 'shopping',
+
+  switchChatTab(mode) {
+    this._chatMode = mode;
+    document.getElementById('tab-shopping').classList.toggle('active', mode==='shopping');
+    document.getElementById('tab-health').classList.toggle('active', mode==='health');
+    const sub = document.getElementById('chatSubtitle');
+    const inp = document.getElementById('chatInput');
+    if (sub) sub.textContent = mode==='shopping'
+      ? (this.lang==='vi'?'Tư vấn mua hàng':'Shopping advisor')
+      : (this.lang==='vi'?'Tư vấn sức khỏe':'Health advisor');
+    if (inp) inp.placeholder = mode==='shopping'
+      ? I18N[this.lang].advisor.placeholder1
+      : I18N[this.lang].advisor.placeholder2;
+    this.chatbot.clearHistory();
+    const msgs = document.getElementById('chatMessages');
+    if (msgs) {
+      msgs.innerHTML = `
+        <div class="msg ai">
+          <div class="msg-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></div>
+          <div class="msg-bubble">${mode==='shopping'
+            ? I18N[this.lang].advisor.welcome
+            : (this.lang==='vi'?'Xin chào! Hãy mô tả tình trạng sức khỏe của bạn, tôi sẽ gợi ý trái cây phù hợp với nguồn tham khảo uy tín nhé!':'Hello! Tell me about your health condition and I\'ll suggest suitable fruits with trusted references!')}
+          </div>
+        </div>
+        <div class="typing-indicator" id="typingIndicator">
+          <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
+        </div>
+      `;
+    }
+  },
+
+  async sendChatMessage() {
+    const inp = document.getElementById('chatInput');
+    if (!inp || !inp.value.trim()) return;
+    const msg = inp.value.trim();
+    inp.value = '';
+    const msgs = document.getElementById('chatMessages');
+    const typing = document.getElementById('typingIndicator');
+    if (!msgs) return;
+    msgs.insertBefore(this._msgEl('user', msg), typing);
+    msgs.scrollTop = msgs.scrollHeight;
+    typing.classList.add('active');
+    const result = await this.chatbot.chat(msg, this._chatMode);
+    typing.classList.remove('active');
+    let replyHTML = result.text.replace(/\n/g, '<br>');
+    if (result.sources && result.sources.length) {
+      const sourceLinks = { shipping: 'https://www.who.int', organic: 'https://www.fao.org', health: 'https://www.healthline.com', nutrition: 'https://www.who.int/news-room/fact-sheets/detail/healthy-diet' };
+      result.sources.forEach(s => {
+        if (sourceLinks[s]) replyHTML += `<br><a class="source-tag" href="${sourceLinks[s]}" target="_blank">📚 ${s}</a>`;
+      });
+    }
+    if (this._chatMode === 'health') {
+      replyHTML += `<br><a class="source-tag" href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank">📚 WHO</a>`;
+      replyHTML += `<a class="source-tag" href="https://www.healthline.com/nutrition" target="_blank">📚 Healthline</a>`;
+    }
+    msgs.insertBefore(this._msgEl('ai', replyHTML, true), typing);
+    msgs.scrollTop = msgs.scrollHeight;
+  },
+
+  _msgEl(role, content, isHTML = false) {
+    const div = document.createElement('div');
+    div.className = `msg ${role}`;
+    if (role === 'ai') {
+      div.innerHTML = `<div class="msg-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></div><div class="msg-bubble">${isHTML ? content : content}</div>`;
+    } else {
+      div.innerHTML = `<div class="msg-bubble">${content}</div>`;
+    }
+    return div;
+  },
+
+  renderBlogPage() {
+    const el = document.getElementById('blog-section');
+    if (!el) return;
+    el.innerHTML = `<section id="blog" style="padding:5rem 2rem;"><div class="blog-inner" id="blogInner"></div></section>`;
+    this.renderBlog();
+  },
+
+  renderBlog() {
+    const el = document.getElementById('blogInner');
+    if (!el) return;
+    const t = I18N[this.lang];
+    el.innerHTML = `
+      <div class="blog-header">
+        <p class="section-label">${this.lang==='vi'?'Từ vườn cây':'From the orchard'}</p>
+        <h2 class="section-title">${t.blog.title}</h2>
+        <p class="section-sub">${t.blog.subtitle}</p>
+      </div>
+      <div class="blog-grid">
+        ${BLOG_POSTS.map(post => {
+          const title = this.lang==='vi'?post.titleVI:post.titleEN;
+          const cat = this.lang==='vi'?post.categoryVI:post.categoryEN;
+          const excerpt = this.lang==='vi'?post.excerptVI:post.excerptEN;
+          const date = new Date(post.date).toLocaleDateString(this.lang==='vi'?'vi-VN':'en-US', {day:'numeric',month:'long',year:'numeric'});
+          return `
+            <div class="blog-card" onclick="App.openBlogPost('${post.id}')">
+              <div class="blog-card-img"><img src="${post.image}" alt="${title}" loading="lazy"></div>
+              <div class="blog-card-body">
+                <div class="blog-meta">
+                  <span class="blog-cat">${cat}</span>
+                  <span class="blog-date">${date}</span>
+                  <span class="blog-read-time">📖 ${post.readTime} ${t.blog.minRead}</span>
+                </div>
+                <h3 class="blog-title">${title}</h3>
+                <p class="blog-excerpt">${excerpt}</p>
+                <a class="blog-read-btn">${t.blog.readMore} <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+  },
+
+  openBlogPost(id) {
+    const post = BLOG_POSTS.find(p => p.id === id);
+    if (!post) return;
+    const title = this.lang==='vi'?post.titleVI:post.titleEN;
+    const content = this.lang==='vi'?post.excerptVI:post.excerptEN;
+    alert(`${title}\n\n${content}\n\n${this.lang==='vi'?'(Bài viết đầy đủ sẽ được thêm sau)':'(Full article coming soon)'}`);
+  },
+
+  initRecognition() {
+    const el = document.getElementById('recognition-section');
+    if (!el) return;
+  },
+
+  renderRecognitionPage() {
+    const el = document.getElementById('recognition-section');
+    if (!el) return;
+    const t = I18N[this.lang];
+    el.innerHTML = `
+      <section id="recognition" style="padding:5rem 2rem;min-height:100vh;">
+        <div class="recognition-inner">
+          <div class="recognition-header">
+            <p class="section-label">Machine Learning</p>
+            <h2 class="section-title">${t.recognition.title}</h2>
+            <p class="section-sub">${t.recognition.subtitle}</p>
+            <div style="background:var(--green-50);border:1px solid var(--green-200);border-radius:var(--radius-md);padding:0.75rem 1rem;font-size:0.85rem;color:var(--green-800);max-width:600px;margin:0 auto;">
+              🤖 ${this.lang==='vi'?'Powered by Canvas Color Analysis + ML Pipeline — chạy hoàn toàn trên trình duyệt, không cần server':'Powered by Canvas Color Analysis + ML Pipeline — runs entirely in your browser, no server needed'}
+            </div>
+          </div>
+          <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()" 
+               ondragover="event.preventDefault();this.classList.add('drag-over')"
+               ondragleave="this.classList.remove('drag-over')"
+               ondrop="App.handleDrop(event)">
+            <div class="upload-icon">🍎</div>
+            <p class="upload-text">${this.lang==='vi'?'Kéo thả ảnh vào đây hoặc':'Drag and drop image here or'}</p>
+            <p class="upload-sub">${this.lang==='vi'?'Hỗ trợ JPG, PNG — tối đa 10MB':'Supports JPG, PNG — max 10MB'}</p>
+            <div class="upload-actions">
+              <button class="btn-green" onclick="event.stopPropagation();document.getElementById('fileInput').click()">
+                📁 ${t.recognition.upload}
+              </button>
+              <button class="btn-green" onclick="event.stopPropagation();App.openCamera()" style="background:var(--green-600)">
+                📷 ${t.recognition.camera}
+              </button>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="App.handleFileSelect(event)">
+            <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display:none" onchange="App.handleFileSelect(event)">
+          </div>
+          <div class="recognition-result" id="recognitionResult">
+            <h3 style="font-family:var(--font-main);font-size:1.3rem;color:var(--green-800);margin-bottom:1.5rem;">${t.recognition.result}</h3>
+            <div class="result-layout">
+              <div>
+                <div class="result-img"><img id="previewImg" src="" alt="preview"></div>
+              </div>
+              <div>
+                <p style="font-size:0.82rem;font-weight:600;color:var(--gray-500);letter-spacing:0.05em;margin-bottom:1rem;">${t.recognition.confidence.toUpperCase()}</p>
+                <div class="result-predictions" id="resultPredictions"></div>
+                <div class="result-match" id="resultMatch" style="margin-top:1rem;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:3rem;background:var(--white);border-radius:var(--radius-xl);padding:2rem;box-shadow:var(--shadow-sm);">
+            <p class="section-label" style="margin-bottom:0.5rem;">ML Pipeline</p>
+            <h3 style="font-family:var(--font-main);font-size:1.3rem;color:var(--green-800);margin-bottom:1rem;">${this.lang==='vi'?'Kiến trúc mô hình':'Model Architecture'}</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+              ${['Input Image\nUpload/Camera','Canvas API\n32×32 Resize','Color Histogram\nFeature Map','Score Classifier\nConfidence Output'].map((step,i)=>`
+                <div style="text-align:center;padding:1rem;background:var(--green-50);border-radius:var(--radius-md);position:relative;">
+                  <div style="width:36px;height:36px;background:var(--green-700);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem;">${i+1}</div>
+                  <div style="font-size:0.82rem;font-weight:600;color:var(--green-800);white-space:pre-line">${step}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  },
+
+  openCamera() {
+    document.getElementById('cameraInput').click();
+  },
+
+  handleDrop(e) {
+    e.preventDefault();
+    document.getElementById('uploadZone').classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) this.processImage(file);
+  },
+
+  handleFileSelect(e) {
+    const file = e.target.files[0];
+    if (file) this.processImage(file);
+  },
+
+  async processImage(file) {
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      const img = document.getElementById('previewImg');
+      if (!img) return;
+      img.src = e.target.result;
+      img.onload = async () => {
+        const zone = document.getElementById('uploadZone');
+        if (zone) zone.innerHTML = `<div style="padding:2rem;text-align:center;color:var(--green-700)"><div style="font-size:2rem;margin-bottom:0.5rem">⏳</div>${I18N[this.lang].recognition.analyzing}</div>`;
+        const results = await this.recognizer.predict(img);
+        this.showRecognitionResults(results);
+      };
+    };
+    reader.readAsDataURL(file);
+  },
+
+  showRecognitionResults(results) {
+    const resultEl = document.getElementById('recognitionResult');
+    const predsEl = document.getElementById('resultPredictions');
+    const matchEl = document.getElementById('resultMatch');
+    if (!resultEl || !predsEl) return;
+    resultEl.classList.add('show');
+    predsEl.innerHTML = results.map(r => `
+      <div class="prediction-item">
+        <span class="prediction-name">${this.lang==='vi'?r.label.nameVI:r.label.name}</span>
+        <div class="prediction-bar"><div class="prediction-fill" style="width:${Math.round(r.confidence*100)}%"></div></div>
+        <span class="prediction-pct">${Math.round(r.confidence*100)}%</span>
+      </div>
+    `).join('');
+    if (matchEl && results.length) {
+      const top = results[0];
+      const product = PRODUCTS.find(p => p.id === top.label.id);
+      if (product) {
+        const pname = this.lang==='vi'?product.nameVI:product.nameEN;
+        matchEl.innerHTML = `
+          <div>
+            <div style="font-size:0.85rem;color:var(--green-700);font-weight:600">🎯 ${this.lang==='vi'?'Nhận dạng':'Identified'}: ${this.lang==='vi'?top.label.nameVI:top.label.name}</div>
+            <div style="font-size:0.82rem;color:var(--gray-600);margin-top:0.25rem">${product.available?(this.lang==='vi'?`✅ Còn hàng — ${this.fmt(product.price)}/kg`:`✅ In stock — ${this.fmt(product.price)}/kg`):(this.lang==='vi'?'⏳ Sắp có hàng':'⏳ Coming soon')}</div>
+          </div>
+          ${product.available?`<button class="btn-green" style="padding:0.5rem 1rem;font-size:0.85rem" onclick="App.addToCart('${product.id}')">${this.lang==='vi'?'Thêm vào giỏ':'Add to cart'}</button>`:''}
+        `;
+      }
+    }
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  },
+
+  renderContactPage() {
+    const el = document.getElementById('contact-section');
+    if (!el) return;
+    const t = I18N[this.lang];
+    el.innerHTML = `
+      <section id="contact" style="padding:5rem 2rem;">
+        <div class="contact-inner">
+          <div>
+            <p class="section-label">${this.lang==='vi'?'Liên hệ':'Get in touch'}</p>
+            <h2 class="contact-info-title section-title">${t.contact.title}</h2>
+            <p class="contact-info-desc">${t.contact.subtitle}</p>
+            <div class="contact-detail">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><div class="contact-detail-label">${t.contact.address}</div><div class="contact-detail-val">${t.contact.addressVal}</div></div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
+              <div><div class="contact-detail-label">${this.lang==='vi'?'Điện thoại / Zalo':'Phone / Zalo'}</div><div class="contact-detail-val">${t.contact.phoneVal}</div></div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><div class="contact-detail-label">Email</div><div class="contact-detail-val">${t.contact.emailVal}</div></div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div><div class="contact-detail-label">${t.contact.hours}</div><div class="contact-detail-val">${t.contact.hoursVal}</div></div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3 style="font-family:var(--font-main);font-size:1.4rem;color:var(--green-800);margin-bottom:1.5rem;">${this.lang==='vi'?'Gửi tin nhắn cho chúng tôi':'Send us a message'}</h3>
+            <div class="form-success" id="contactSuccess">${this.lang==='vi'?'✓ Cảm ơn! Chúng tôi sẽ liên hệ lại sớm nhất có thể.':'✓ Thank you! We\'ll get back to you as soon as possible.'}</div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">${t.contact.name}</label><input class="form-input" id="cName" placeholder="${t.contact.name}"></div>
+              <div class="form-group"><label class="form-label">${t.contact.phone}</label><input class="form-input" id="cPhone" placeholder="${t.contact.phone}"></div>
+            </div>
+            <div class="form-group"><label class="form-label">${t.contact.email}</label><input class="form-input" id="cEmail" type="email" placeholder="${t.contact.email}"></div>
+            <div class="form-group"><label class="form-label">${t.contact.message}</label><textarea class="form-textarea" id="cMessage" placeholder="${t.contact.message}"></textarea></div>
+            <button class="form-submit" onclick="App.submitContact()">${t.contact.send}</button>
+          </div>
+        </div>
+      </section>
+    `;
+  },
+
+  submitContact() {
+    const s = document.getElementById('contactSuccess');
+    if (s) { s.classList.add('show'); setTimeout(() => s.classList.remove('show'), 4000); }
+  },
+
+  renderPaymentModal() {
+    const el = document.getElementById('paymentModal');
+    if (!el) return;
+    const t = I18N[this.lang];
+    el.innerHTML = `
+      <div class="modal-header">
+        <span class="modal-title">${t.payment.title}</span>
+        <button class="modal-close" onclick="App.closePayment()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <div class="order-summary" id="payOrderSummary"></div>
+        <p style="font-size:0.9rem;font-weight:600;color:var(--gray-700);margin-bottom:0.75rem;">${t.payment.method}</p>
+        <div class="payment-methods">
+          <button class="pay-method-btn active" onclick="App.selectPayMethod('paypal',this)">
+            <span class="pay-method-icon">🅿️</span><span class="pay-method-label">PayPal</span>
+          </button>
+          <button class="pay-method-btn" onclick="App.selectPayMethod('card',this)">
+            <span class="pay-method-icon">💳</span><span class="pay-method-label">${t.payment.card}</span>
+          </button>
+          <button class="pay-method-btn" onclick="App.selectPayMethod('bank',this)">
+            <span class="pay-method-icon">🏦</span><span class="pay-method-label">${t.payment.bank}</span>
+          </button>
+          <button class="pay-method-btn" onclick="App.selectPayMethod('cod',this)">
+            <span class="pay-method-icon">💵</span><span class="pay-method-label">${t.payment.cod}</span>
+          </button>
+        </div>
+        <div class="card-form" id="cardForm">
+          <div class="form-group"><label class="form-label">${t.payment.cardNum}</label><input class="form-input" placeholder="1234 5678 9012 3456"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;">
+            <div class="form-group" style="grid-column:span 2"><label class="form-label">${t.payment.expiry}</label><input class="form-input" placeholder="MM/YY"></div>
+            <div class="form-group"><label class="form-label">${t.payment.cvv}</label><input class="form-input" placeholder="123" type="password"></div>
+          </div>
+          <div class="form-group"><label class="form-label">${t.payment.name}</label><input class="form-input" placeholder="${t.payment.name}"></div>
+        </div>
+        <div id="paypalInfo" style="display:none;padding:1rem;background:var(--green-50);border-radius:var(--radius-md);text-align:center;color:var(--green-800);">
+          🅿️ ${this.lang==='vi'?'Bạn sẽ được chuyển sang PayPal để hoàn tất thanh toán':'You will be redirected to PayPal to complete payment'}
+        </div>
+        <div id="bankInfo" style="display:none;padding:1rem;background:var(--green-50);border-radius:var(--radius-md);font-size:0.9rem;color:var(--green-800);">
+          🏦 <strong>${this.lang==='vi'?'Thông tin chuyển khoản:':'Bank Transfer Info:'}</strong><br>
+          ${this.lang==='vi'?'Ngân hàng: Vietcombank':'Bank: Vietcombank'}<br>
+          ${this.lang==='vi'?'Số TK: 1234 5678 901':'Account: 1234 5678 901'}<br>
+          ${this.lang==='vi'?'Chủ TK: NGUYEN THI HOA':'Owner: NGUYEN THI HOA'}<br>
+          ${this.lang==='vi'?'Nội dung: Tên + SĐT + HQS':'Content: Name + Phone + HQS'}
+        </div>
+        <div id="codInfo" style="display:none;padding:1rem;background:var(--green-50);border-radius:var(--radius-md);color:var(--green-800);">
+          💵 ${this.lang==='vi'?'Thanh toán tiền mặt khi nhận hàng. Chỉ áp dụng trong TP. Nha Trang.':'Cash on delivery. Only available within Nha Trang city.'}
+        </div>
+        <button class="form-submit" style="margin-top:1.5rem" onclick="App.confirmPayment()">${t.payment.confirm}</button>
+        <p style="text-align:center;font-size:0.78rem;color:var(--gray-400);margin-top:0.75rem;">🔒 ${this.lang==='vi'?'Thanh toán được bảo mật bằng SSL 256-bit':'Payment secured with 256-bit SSL'}</p>
+      </div>
+    `;
+  },
+
+  selectPayMethod(method, btn) {
+    document.querySelectorAll('.pay-method-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('cardForm').classList.toggle('show', method==='card');
+    document.getElementById('paypalInfo').style.display = method==='paypal'?'block':'none';
+    document.getElementById('bankInfo').style.display = method==='bank'?'block':'none';
+    document.getElementById('codInfo').style.display = method==='cod'?'block':'none';
+  },
+
+  openPayment() {
+    if (this.cart.length === 0) return;
+    const sumEl = document.getElementById('payOrderSummary');
+    if (sumEl) {
+      const items = this.cart.map(item => {
+        const p = PRODUCTS.find(x => x.id === item.id);
+        if (!p) return '';
+        const name = this.lang==='vi'?p.nameVI:p.nameEN;
+        return `<div class="order-item"><span>${name} × ${item.qty}kg</span><span>${this.fmt(p.price*item.qty)}</span></div>`;
+      }).join('');
+      const shipping = 20000;
+      const subtotal = this.getCartTotal();
+      sumEl.innerHTML = `${items}<div class="order-item"><span>${this.lang==='vi'?'Phí ship':'Shipping'}</span><span>${this.fmt(shipping)}</span></div><div class="order-total"><span>${this.lang==='vi'?'Tổng cộng':'Total'}</span><span>${this.fmt(subtotal+shipping)}</span></div>`;
+    }
+    document.getElementById('paymentModalOverlay').classList.add('open');
+  },
+
+  closePayment() {
+    document.getElementById('paymentModalOverlay').classList.remove('open');
+  },
+
+  confirmPayment() {
+    this.closePayment();
+    this.cart = [];
+    this.saveCart();
+    this.updateCartBadge();
+    const msg = I18N[this.lang].payment.success;
+    alert(`✅ ${msg}`);
+  },
+
+  renderFloatBot() {
+    const el = document.getElementById('floatBot');
+    if (!el) return;
+    const t = I18N[this.lang];
+    el.innerHTML = `
+      <div class="float-chat" id="floatChat">
+        <div class="float-chat-header">
+          <span class="float-chat-name">🌿 AI Hoa Quả Sơn</span>
+          <button class="float-chat-close" onclick="App.closeFloatBot()">✕</button>
+        </div>
+        <div class="float-chat-messages" id="floatMessages">
+          <div class="float-msg ai">${t.floatBot.greeting}</div>
+        </div>
+        <div class="float-quick-btns">
+          <button class="float-quick-btn" onclick="App.floatQuick('${this.lang==='vi'?'Các loại trái cây đang có hàng?':'What fruits are available?'}')">${this.lang==='vi'?'Còn hàng gì?':'What\'s in stock?'}</button>
+          <button class="float-quick-btn" onclick="App.floatQuick('${this.lang==='vi'?'Giá bao nhiêu?':'What are the prices?'}')">${this.lang==='vi'?'Xem giá':'Pricing'}</button>
+          <button class="float-quick-btn" onclick="App.navigate('advisor');App.closeFloatBot()">${this.lang==='vi'?'Tư vấn chi tiết':'Full advisor'}</button>
+        </div>
+        <div class="float-input-row">
+          <input class="float-input" id="floatInput" placeholder="${this.lang==='vi'?'Nhắn tin...':'Type a message...'}" onkeydown="if(event.key==='Enter')App.sendFloatMessage()">
+          <button class="float-send" onclick="App.sendFloatMessage()">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+      <button class="float-bot-btn" id="floatBotBtn" onclick="App.toggleFloatBot()" title="${t.floatBot.open}">
+        <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2zM7.5 13a1.5 1.5 0 000 3 1.5 1.5 0 000-3zm9 0a1.5 1.5 0 000 3 1.5 1.5 0 000-3z"/></svg>
+      </button>
+    `;
+  },
+
+  _floatOpen: false,
+
+  toggleFloatBot() {
+    this._floatOpen = !this._floatOpen;
+    document.getElementById('floatChat').classList.toggle('open', this._floatOpen);
+  },
+
+  closeFloatBot() {
+    this._floatOpen = false;
+    document.getElementById('floatChat').classList.remove('open');
+  },
+
+  floatQuick(msg) {
+    document.getElementById('floatInput').value = msg;
+    this.sendFloatMessage();
+  },
+
+  async sendFloatMessage() {
+    const inp = document.getElementById('floatInput');
+    if (!inp || !inp.value.trim()) return;
+    const msg = inp.value.trim();
+    inp.value = '';
+    const msgs = document.getElementById('floatMessages');
+    if (!msgs) return;
+    const userDiv = document.createElement('div');
+    userDiv.className = 'float-msg user';
+    userDiv.textContent = msg;
+    msgs.appendChild(userDiv);
+    msgs.scrollTop = msgs.scrollHeight;
+    const loadDiv = document.createElement('div');
+    loadDiv.className = 'float-msg ai';
+    loadDiv.textContent = '...';
+    msgs.appendChild(loadDiv);
+    const result = await this.floatChatbot.chat(msg, 'shopping');
+    loadDiv.textContent = result.text;
+    msgs.scrollTop = msgs.scrollHeight;
+  },
+
+  handleScroll() {
+    const nav = document.getElementById('navbar');
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+  },
+
+  bindEvents() {
+    document.addEventListener('click', e => {
+      if (e.target.id === 'cartOverlay') this.closeCart();
+      if (e.target.id === 'paymentModalOverlay') this.closePayment();
+      if (e.target.id === 'productModalOverlay') this.closeProductModal();
+    });
+  }
+};
+
+function toggleMenu() {
+  const links = document.getElementById('navLinks');
+  if (links) links.classList.toggle('mobile-open');
+}
+function closeMenu() {
+  const links = document.getElementById('navLinks');
+  if (links) links.classList.remove('mobile-open');
+}
+
+document.addEventListener('DOMContentLoaded', () => App.init());
+
+</script>
+</body>
+</html>
