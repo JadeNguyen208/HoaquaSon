@@ -754,7 +754,7 @@ const PRODUCTS = [
     descEN: 'A rare jackfruit variety with distinctive red-pink flesh, sweet and fragrant. Organically grown at Hoa Qua Son Farm.',
     category: 'tropical',
     nutrition: { calories: 95, vitC: '22.7mg', fiber: '1.5g', potassium: '448mg' },
-    combos: ['vo-sua-hoang-kim', 'buoi-da-xanh'],
+    combos: ['vo-sua-hoang-kim', 'du-du-vang'],
     tags: ['rare', 'organic']
   },
   {
@@ -791,16 +791,16 @@ const PRODUCTS = [
     id: 'sau-rieng-musangking',
     nameVI: 'Sầu Riêng Musang King',
     nameEN: 'Musang King Durian',
-    price: 0,
+    price: 60000,
     unit: 'kg',
-    available: false,
+    available: true,
     image: 'images/sau-rieng.jpg',
-    descVI: 'Sầu riêng Musang King - vua của các loại sầu riêng. Cơm dày vàng nghệ, vị béo đậm đà, đắng nhẹ đặc trưng. Hiện đang trong mùa chăm sóc, sắp ra trái.',
-    descEN: 'Musang King - the king of durians. Thick golden flesh, rich creamy taste with a signature bitter note. Currently in growing season.',
+    descVI: 'Sầu riêng Musang King - vua của các loại sầu riêng. Cơm dày vàng nghệ, vị béo đậm đà, đắng nhẹ đặc trưng.',
+    descEN: 'Musang King - the king of durians. Thick golden flesh, rich creamy taste with a signature bitter note.',
     category: 'tropical',
     nutrition: { calories: 357, vitC: '19.7mg', fiber: '3.8g', potassium: '436mg' },
     combos: [],
-    tags: ['premium', 'coming-soon']
+    tags: ['premium', 'bestseller']
   },
   {
     id: 'chuoi-cau',
@@ -848,19 +848,64 @@ const PRODUCTS = [
     tags: ['local-specialty', 'crispy']
   },
   {
-    id: 'buoi-da-xanh',
-    nameVI: 'Bưởi Da Xanh',
-    nameEN: 'Green Skin Pomelo',
-    price: 40000,
+    id: 'cherry-brazil',
+    nameVI: 'Cherry Brazil',
+    nameEN: 'Brazilian Cherry',
+    price: 90000,
+    unit: 'kg',
+    available: false,
+    image: 'images/cherry-brazil.jpg',
+    descVI: 'Cherry Brazil (Pitanga) trái nhỏ xinh, vị chua ngọt lạ miệng, giàu chất chống oxy hóa. Hiện đang hết hàng.',
+    descEN: 'Brazilian cherry (Pitanga), small and colorful with a unique sweet-tart flavor, rich in antioxidants. Currently out of stock.',
+    category: 'berry',
+    nutrition: { calories: 33, vitC: '30mg', fiber: '1.2g', potassium: '134mg' },
+    combos: [],
+    tags: ['rare', 'out-of-stock']
+  },
+  {
+    id: 'chuoi-moc',
+    nameVI: 'Chuối Mốc',
+    nameEN: 'Moc Banana',
+    price: 30000,
     unit: 'kg',
     available: true,
-    image: 'images/buoi-da-xanh.jpg',
-    descVI: 'Bưởi da xanh Bến Tre nổi tiếng, tép mọng nước, ngọt ít chua, ăn không bị chát. Giàu vitamin C và chất xơ.',
-    descEN: 'Famous Ben Tre green pomelo with juicy segments, sweet with mild acidity, no bitterness. Rich in Vitamin C and fiber.',
-    category: 'citrus',
-    nutrition: { calories: 38, vitC: '61mg', fiber: '1.1g', potassium: '135mg' },
-    combos: ['mit-ruot-do', 'nho-than-go'],
-    tags: ['detox', 'vitamin-c']
+    image: 'images/chuoi-moc.jpg',
+    descVI: 'Chuối mốc vỏ dày, thịt chắc, vị ngọt bùi đặc trưng. Ăn tươi hay chiên, nướng đều ngon.',
+    descEN: 'Thick-skinned banana with firm, distinctively sweet flesh. Delicious eaten fresh, fried, or grilled.',
+    category: 'tropical',
+    nutrition: { calories: 89, vitC: '8.7mg', fiber: '2.6g', potassium: '358mg' },
+    combos: ['chuoi-cau'],
+    tags: ['local-specialty']
+  },
+  {
+    id: 'chanh-day',
+    nameVI: 'Chanh Dây',
+    nameEN: 'Passion Fruit',
+    price: 10000,
+    unit: 'kg',
+    available: true,
+    image: 'images/chanh-day.jpg',
+    descVI: 'Chanh dây chua ngọt thơm nồng, nhiều hạt mọng nước. Ép nước hay làm sinh tố đều tuyệt vời.',
+    descEN: 'Fragrant sweet-tart passion fruit with juicy seeds. Perfect for juice or smoothies.',
+    category: 'tropical',
+    nutrition: { calories: 97, vitC: '30mg', fiber: '10.4g', potassium: '348mg' },
+    combos: [],
+    tags: ['juice', 'vitamin-c']
+  },
+  {
+    id: 'du-du-vang',
+    nameVI: 'Đu Đủ Vàng',
+    nameEN: 'Yellow Papaya',
+    price: 30000,
+    unit: 'kg',
+    available: true,
+    image: 'images/du-du-vang.jpg',
+    descVI: 'Đu đủ vàng chín cây, thịt vàng cam mềm mịn, ngọt thanh mát. Giàu vitamin A và enzyme papain tốt cho tiêu hóa.',
+    descEN: 'Tree-ripened yellow papaya with soft, smooth orange flesh and refreshing sweetness. Rich in Vitamin A and digestive papain.',
+    category: 'tropical',
+    nutrition: { calories: 43, vitC: '61mg', fiber: '1.7g', potassium: '182mg' },
+    combos: [],
+    tags: ['vitamin-a', 'digestive']
   },
   {
     id: 'vo-sua-mica',
@@ -889,23 +934,23 @@ const PRODUCTS = [
     descEN: 'Mature woody vine grapes, large and juicy with deep sweetness. Rich in resveratrol antioxidants. Pesticide-free.',
     category: 'berry',
     nutrition: { calories: 69, vitC: '10.8mg', fiber: '0.9g', potassium: '191mg' },
-    combos: ['buoi-da-xanh', 'vo-sua-hoang-kim'],
+    combos: ['chanh-day', 'vo-sua-hoang-kim'],
     tags: ['antioxidant', 'pesticide-free']
   },
   {
     id: 'chom-chom',
-    nameVI: 'Chôm Chôm',
-    nameEN: 'Rambutan',
-    price: 0,
+    nameVI: 'Chôm Chôm Thái',
+    nameEN: 'Thai Rambutan',
+    price: 40000,
     unit: 'kg',
-    available: false,
+    available: true,
     image: 'images/chom-chom.jpg',
-    descVI: 'Chôm chôm trái mùa vụ, hiện tại vườn đang trong giai đoạn ra hoa. Dự kiến có trái sau 2-3 tháng.',
-    descEN: 'Rambutan is currently in flowering stage. Expected harvest in 2-3 months.',
+    descVI: 'Chôm chôm Thái vỏ đỏ tươi, gai mềm, cơm dày giòn ngọt, dễ tách hạt. Trái hái chín cây, không ngâm hóa chất.',
+    descEN: 'Thai rambutan with bright red skin and soft spines. Thick, crisp, sweet flesh that separates easily from the seed. Tree-ripened, no chemical treatment.',
     category: 'tropical',
     nutrition: { calories: 82, vitC: '4.9mg', fiber: '0.9g', potassium: '42mg' },
     combos: [],
-    tags: ['coming-soon']
+    tags: ['bestseller']
   }
 ];
 
@@ -1024,16 +1069,16 @@ const KNOWLEDGE_BASE = [
 ];
 
 const PURCHASE_HISTORY = [
-  { userId: 'u1', items: ['mit-ruot-do', 'vo-sua-hoang-kim', 'buoi-da-xanh'] },
+  { userId: 'u1', items: ['mit-ruot-do', 'vo-sua-hoang-kim', 'du-du-vang'] },
   { userId: 'u2', items: ['oi-ruby', 'coc-chua-ngot', 'man-an-phuoc'] },
-  { userId: 'u3', items: ['nho-than-go', 'buoi-da-xanh', 'vo-sua-mica'] },
+  { userId: 'u3', items: ['nho-than-go', 'chanh-day', 'vo-sua-mica'] },
   { userId: 'u4', items: ['chuoi-cau', 'vo-sua-hoang-kim', 'vo-sua-mica'] },
   { userId: 'u5', items: ['mit-ruot-do', 'nho-than-go', 'chuoi-cau'] },
-  { userId: 'u6', items: ['oi-ruby', 'man-an-phuoc', 'buoi-da-xanh'] },
+  { userId: 'u6', items: ['oi-ruby', 'man-an-phuoc', 'chuoi-moc'] },
   { userId: 'u7', items: ['vo-sua-hoang-kim', 'chuoi-cau', 'mit-ruot-do'] },
   { userId: 'u8', items: ['coc-chua-ngot', 'man-an-phuoc', 'oi-ruby'] },
   { userId: 'u9', items: ['nho-than-go', 'vo-sua-mica', 'vo-sua-hoang-kim'] },
-  { userId: 'u10', items: ['buoi-da-xanh', 'mit-ruot-do', 'vo-sua-hoang-kim'] }
+  { userId: 'u10', items: ['du-du-vang', 'mit-ruot-do', 'vo-sua-hoang-kim'] }
 ];
 
 const I18N = {
@@ -1321,7 +1366,7 @@ class FruitRecognizer {
       { name: 'Banana',     nameVI: 'Chuối',       id: 'chuoi-cau' },
       { name: 'Ambarella',  nameVI: 'Cóc',         id: 'coc-chua-ngot' },
       { name: 'Plum',       nameVI: 'Mận',         id: 'man-an-phuoc' },
-      { name: 'Pomelo',     nameVI: 'Bưởi',        id: 'buoi-da-xanh' },
+      { name: 'Papaya',     nameVI: 'Đu Đủ',       id: 'du-du-vang' },
       { name: 'Grape',      nameVI: 'Nho',         id: 'nho-than-go' },
       { name: 'Rambutan',   nameVI: 'Chôm Chôm',  id: 'chom-chom' }
     ];
@@ -1392,7 +1437,7 @@ class FruitRecognizer {
       'nho-than-go':        f.purpleRatio * 4 + f.brownRatio,
       'man-an-phuoc':       f.redRatio * 3 + f.purpleRatio,
       'coc-chua-ngot':      f.greenRatio * 2 + f.yellowRatio,
-      'buoi-da-xanh':       f.greenRatio * 3 + (f.brightness > 100 ? 1 : 0),
+      'du-du-vang':         f.yellowRatio * 2 + f.redRatio * 0.3 + (f.brightness > 120 ? 1 : 0),
       'vo-sua-hoang-kim':   f.yellowRatio * 3 + (f.brightness > 150 ? 1 : 0),
       'chuoi-cau':          f.yellowRatio * 2 + f.brownRatio * 0.5,
       'mit-ruot-do':        f.yellowRatio + f.brownRatio * 2 + f.greenRatio,
@@ -1479,8 +1524,8 @@ class RAGChatbot {
 
   _buildSystemPrompt(mode) {
     const farmInfo = this.lang === 'vi'
-      ? `Bạn là AI tư vấn của nông trại Hoa Quả Sơn tại Khánh Hòa, Việt Nam. Nông trại trồng các loại trái cây hữu cơ gồm: Mít Ruột Đỏ, Vú Sữa Hoàng Kim, Ổi Ruby, Chuối Cau, Cóc Chua Ngọt, Mận An Phước, Bưởi Da Xanh, Vú Sữa Mica, Nho Thân Gỗ (tất cả 40.000đ/kg). Sầu Riêng Musang King và Chôm Chôm hiện chưa có hàng. Chỉ giao hàng trong tỉnh Khánh Hòa.`
-      : `You are an AI advisor for Hoa Qua Son Farm in Khanh Hoa, Vietnam. The farm grows organic tropical fruits: Red-Flesh Jackfruit, Golden Star Apple, Ruby Guava, Lady Finger Banana, Sweet Sour Ambarella, An Phuoc Plum, Green Skin Pomelo, Mica Star Apple, Woody Stem Grape (all 40,000₫/kg). Musang King Durian and Rambutan are currently not available. Only delivers within Khanh Hoa province.`;
+      ? `Bạn là AI tư vấn của nông trại Hoa Quả Sơn tại Khánh Hòa, Việt Nam. Nông trại trồng các loại trái cây hữu cơ: Mít Ruột Đỏ (40k/kg), Vú Sữa Hoàng Kim (40k/kg), Ổi Ruby (40k/kg), Sầu Riêng Musang King (60k/kg), Chuối Cau (40k/kg), Cóc Chua Ngọt (40k/kg), Mận An Phước (40k/kg), Vú Sữa Mica (40k/kg), Nho Thân Gỗ (40k/kg), Chôm Chôm Thái (40k/kg), Chuối Mốc (30k/kg), Chanh Dây (10k/kg), Đu Đủ Vàng (30k/kg). Cherry Brazil (90k/kg) hiện đang hết hàng. Chỉ giao hàng trong tỉnh Khánh Hòa.`
+      : `You are an AI advisor for Hoa Qua Son Farm in Khanh Hoa, Vietnam. The farm grows organic tropical fruits: Red-Flesh Jackfruit (40k/kg), Golden Star Apple (40k/kg), Ruby Guava (40k/kg), Musang King Durian (60k/kg), Lady Finger Banana (40k/kg), Sweet Sour Ambarella (40k/kg), An Phuoc Plum (40k/kg), Mica Star Apple (40k/kg), Woody Stem Grape (40k/kg), Thai Rambutan (40k/kg), Moc Banana (30k/kg), Passion Fruit (10k/kg), Yellow Papaya (30k/kg). Brazilian Cherry (90k/kg) is currently out of stock. Only delivers within Khanh Hoa province.`;
 
     if (mode === 'shopping') {
       return this.lang === 'vi'
@@ -1680,8 +1725,8 @@ const App = {
           <p class="hero-subtitle">${t.hero.subtitle}</p>
           <p class="hero-desc">${t.hero.desc}</p>
           <div class="hero-cta">
-            <a class="btn-primary" onclick="App.navigate('products')">${t.hero.cta1} →</a>
-            <a class="btn-outline" onclick="App.navigate('advisor')">${t.hero.cta2}</a>
+            <a class="btn-primary" href="#products" onclick="App.navigate('products'); return false;">${t.hero.cta1} →</a>
+            <a class="btn-outline" href="#advisor" onclick="App.navigate('advisor'); return false;">${t.hero.cta2}</a>
           </div>
           <div class="hero-stats">
             <div>
@@ -1737,7 +1782,7 @@ const App = {
               ? 'Từ mít ruột đỏ quý hiếm đến nho thân gỗ lâu năm, mỗi loại trái cây đều được chăm sóc tỉ mỉ và hái đúng độ chín để đảm bảo hương vị tươi ngon nhất khi đến tay bạn.'
               : 'From rare red-flesh jackfruit to aged woody vine grapes, every fruit is carefully tended and harvested at peak ripeness to ensure the best flavor when it reaches you.'}
           </p>
-          <a class="btn-primary" onclick="App.navigate('products')">${this.lang==='vi'?'Khám phá sản phẩm →':'Explore products →'}</a>
+          <a class="btn-primary" href="#products" onclick="App.navigate('products'); return false;">${this.lang==='vi'?'Khám phá sản phẩm →':'Explore products →'}</a>
         </div>
       </div>
     `;
@@ -1758,7 +1803,7 @@ const App = {
           ${popular.map(p => this.productCardHTML(p)).join('')}
         </div>
         <div style="text-align:center;margin-top:2.5rem;">
-          <a class="btn-primary" onclick="App.navigate('products')">${this.lang==='vi'?'Xem tất cả sản phẩm →':'View all products →'}</a>
+          <a class="btn-primary" href="#products" onclick="App.navigate('products'); return false;">${this.lang==='vi'?'Xem tất cả sản phẩm →':'View all products →'}</a>
         </div>
       </div>
     `;
@@ -1768,7 +1813,7 @@ const App = {
     const el = document.getElementById('testimonials');
     if (!el) return;
     const reviews = [
-      { text: this.lang==='vi'?'"Mít ruột đỏ ở đây ngon tuyệt vời, chưa thấy ở đâu có. Tươi, ngọt, thơm đặc trưng. Sẽ tiếp tục ủng hộ!"':'"The red-flesh jackfruit here is absolutely amazing, never seen it anywhere else. Fresh, sweet, uniquely fragrant. Will definitely order again!"', name: 'Nguyễn Thị Lan', loc: this.lang==='vi'?'Nha Trang, Khánh Hòa':'Nha Trang, Khanh Hoa', img:'https://i.pravatar.cc/80?img=1' },
+      { text: this.lang==='vi'?'"Mít ruột đỏ ở đây ngon tuyệt vời, chưa thấy ở đâu có. Tươi, ngọt, thơm đặc trưng. Sẽ tiếp tục ủng hộ!"':'"The red-flesh jackfruit here is absolutely amazing, never seen it anywhere else. Fresh, sweet, uniquely fragrant. Will definitely order again!"', name: 'Nguyễn Thị Lan', loc: this.lang==='vi'?'Nha Trang, Khánh Hòa':'Nha Trang, Khanh Hoa', img:'https://i.pravatar.cc/80?img=44' },
       { text: this.lang==='vi'?'"Đặt hàng sáng, chiều nhận ngay. Vú sữa hoàng kim vỏ vàng ươm, ăn ngọt lịm như sữa. Giao hàng cẩn thận, không bị dập."':'"Ordered in the morning, received by afternoon. The golden star apple has beautiful golden skin and is as sweet as milk. Careful delivery, no bruising."', name: 'Trần Minh Khoa', loc: this.lang==='vi'?'Cam Ranh, Khánh Hòa':'Cam Ranh, Khanh Hoa', img:'https://i.pravatar.cc/80?img=8' },
       { text: this.lang==='vi'?'"Ổi ruby của farm giàu vitamin C, con tôi rất thích. Biết là không thuốc trừ sâu nên an tâm cho ăn hàng ngày."':'"The farm\'s ruby guava is rich in vitamin C, my kids love it. Knowing it\'s pesticide-free makes me comfortable feeding it to them daily."', name: 'Phạm Hoàng Yến', loc: this.lang==='vi'?'Diên Khánh, Khánh Hòa':'Dien Khanh, Khanh Hoa', img:'https://i.pravatar.cc/80?img=5' }
     ];
