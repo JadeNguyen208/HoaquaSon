@@ -1725,8 +1725,8 @@ const App = {
           <p class="hero-subtitle">${t.hero.subtitle}</p>
           <p class="hero-desc">${t.hero.desc}</p>
           <div class="hero-cta">
-            <a class="btn-primary" href="#products" onclick="App.navigate('products'); return false;">${t.hero.cta1} →</a>
-            <a class="btn-outline" href="#advisor" onclick="App.navigate('advisor'); return false;">${t.hero.cta2}</a>
+            <a class="btn-primary" href="#products" onclick="event.preventDefault(); App.navigate('products');">${t.hero.cta1} →</a>
+            <a class="btn-outline" href="#advisor" onclick="event.preventDefault(); App.navigate('advisor');">${t.hero.cta2}</a>
           </div>
           <div class="hero-stats">
             <div>
@@ -1782,7 +1782,7 @@ const App = {
               ? 'Từ mít ruột đỏ quý hiếm đến nho thân gỗ lâu năm, mỗi loại trái cây đều được chăm sóc tỉ mỉ và hái đúng độ chín để đảm bảo hương vị tươi ngon nhất khi đến tay bạn.'
               : 'From rare red-flesh jackfruit to aged woody vine grapes, every fruit is carefully tended and harvested at peak ripeness to ensure the best flavor when it reaches you.'}
           </p>
-          <a class="btn-primary" href="#products" onclick="App.navigate('products'); return false;">${this.lang==='vi'?'Khám phá sản phẩm →':'Explore products →'}</a>
+          <a class="btn-primary" href="#products" onclick="event.preventDefault(); App.navigate('products');">${this.lang==='vi'?'Khám phá sản phẩm →':'Explore products →'}</a>
         </div>
       </div>
     `;
@@ -1803,7 +1803,7 @@ const App = {
           ${popular.map(p => this.productCardHTML(p)).join('')}
         </div>
         <div style="text-align:center;margin-top:2.5rem;">
-          <a class="btn-primary" href="#products" onclick="App.navigate('products'); return false;">${this.lang==='vi'?'Xem tất cả sản phẩm →':'View all products →'}</a>
+          <a class="btn-primary" href="#products" onclick="event.preventDefault(); App.navigate('products');">${this.lang==='vi'?'Xem tất cả sản phẩm →':'View all products →'}</a>
         </div>
       </div>
     `;
