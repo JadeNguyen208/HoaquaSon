@@ -1725,8 +1725,8 @@ const App = {
           <p class="hero-subtitle">${t.hero.subtitle}</p>
           <p class="hero-desc">${t.hero.desc}</p>
           <div class="hero-cta">
-            <a class="btn-primary" href="#products" onclick="event.preventDefault(); App.navigate('products');">${t.hero.cta1} →</a>
-            <a class="btn-outline" href="#advisor" onclick="event.preventDefault(); App.navigate('advisor');">${t.hero.cta2}</a>
+            <button type="button" class="btn-primary" onclick="App.navigate('products')">${t.hero.cta1} →</button>
+            <button type="button" class="btn-outline" onclick="App.navigate('advisor')">${t.hero.cta2}</button>
           </div>
           <div class="hero-stats">
             <div>
@@ -1782,7 +1782,7 @@ const App = {
               ? 'Từ mít ruột đỏ quý hiếm đến nho thân gỗ lâu năm, mỗi loại trái cây đều được chăm sóc tỉ mỉ và hái đúng độ chín để đảm bảo hương vị tươi ngon nhất khi đến tay bạn.'
               : 'From rare red-flesh jackfruit to aged woody vine grapes, every fruit is carefully tended and harvested at peak ripeness to ensure the best flavor when it reaches you.'}
           </p>
-          <a class="btn-primary" href="#products" onclick="event.preventDefault(); App.navigate('products');">${this.lang==='vi'?'Khám phá sản phẩm →':'Explore products →'}</a>
+          <button type="button" class="btn-primary" onclick="App.navigate('products')">${this.lang==='vi'?'Khám phá sản phẩm →':'Explore products →'}</button>
         </div>
       </div>
     `;
@@ -1803,7 +1803,7 @@ const App = {
           ${popular.map(p => this.productCardHTML(p)).join('')}
         </div>
         <div style="text-align:center;margin-top:2.5rem;">
-          <a class="btn-primary" href="#products" onclick="event.preventDefault(); App.navigate('products');">${this.lang==='vi'?'Xem tất cả sản phẩm →':'View all products →'}</a>
+          <button type="button" class="btn-primary" onclick="App.navigate('products')">${this.lang==='vi'?'Xem tất cả sản phẩm →':'View all products →'}</button>
         </div>
       </div>
     `;
@@ -1865,7 +1865,7 @@ const App = {
           <div>
             <p class="footer-col-title">${this.lang==='vi'?'Sản phẩm':'Products'}</p>
             <ul class="footer-links">
-              ${PRODUCTS.filter(p=>p.available).slice(0,5).map(p=>`<li><a href="#products" onclick="App.navigate('products')">${this.lang==='vi'?p.nameVI:p.nameEN}</a></li>`).join('')}
+              ${PRODUCTS.filter(p=>p.available).slice(0,5).map(p=>`<li><a href="#products" onclick="event.preventDefault(); App.navigate('products');">${this.lang==='vi'?p.nameVI:p.nameEN}</a></li>`).join('')}
             </ul>
           </div>
           <div>
