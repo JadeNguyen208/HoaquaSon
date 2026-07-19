@@ -149,19 +149,19 @@ h1,h2,h3,h4,h5 { font-family: var(--font-main); font-weight: 700; line-height: 1
 /* ===== HERO ===== */
 #hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 50%, var(--green-800) 100%);
+  background: linear-gradient(135deg, var(--green-700) 0%, var(--green-500) 45%, var(--green-600) 100%);
   display: flex; align-items: center;
   position: relative; overflow: hidden;
 }
 .hero-bg-pattern {
   position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 20% 80%, rgba(201,168,76,0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(52,173,121,0.15) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 20% 80%, rgba(212,184,112,0.28) 0%, transparent 55%),
+                    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.22) 0%, transparent 55%);
 }
 .hero-leaves {
   position: absolute; right: 0; top: 0; bottom: 0; width: 50%;
-  background: url('images/hero-bg.jpg') center/cover;
-  opacity: 0.2;
+  background: url('images/farm.jpg') center/cover;
+  opacity: 0.42;
   -webkit-mask-image: linear-gradient(to right, transparent, black);
   mask-image: linear-gradient(to right, transparent, black);
 }
@@ -1636,7 +1636,7 @@ const App = {
     document.querySelectorAll('.nav-links a').forEach(a => {
       a.classList.toggle('active', a.dataset.section === section);
     });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
     if (section === 'products') this.renderProducts();
     if (section === 'blog') this.renderBlog();
     if (section === 'recognition') this.initRecognition();
@@ -1730,7 +1730,7 @@ const App = {
           </div>
           <div class="hero-stats">
             <div>
-              <div class="hero-stat-num">9+</div>
+              <div class="hero-stat-num">40+</div>
               <div class="hero-stat-label">${this.lang==='vi'?'Loại trái cây':'Fruit varieties'}</div>
             </div>
             <div>
