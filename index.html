@@ -154,9 +154,14 @@ h1,h2,h3,h4,h5 { font-family: var(--font-main); font-weight: 700; line-height: 1
   position: relative; overflow: hidden;
 }
 .hero-bg-pattern {
-  position: absolute; inset: 0;
+  position: absolute; inset: 0; z-index: 1;
   background-image: radial-gradient(circle at 20% 80%, rgba(212,184,112,0.28) 0%, transparent 55%),
                     radial-gradient(circle at 80% 20%, rgba(255,255,255,0.22) 0%, transparent 55%);
+}
+/* Scrim tối nhẹ bên trái để chữ nổi rõ trên nền ảnh sáng */
+#hero::after {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(100deg, rgba(10,35,21,0.78) 0%, rgba(10,35,21,0.55) 38%, rgba(10,35,21,0.12) 62%, transparent 80%);
 }
 .hero-leaves {
   position: absolute; right: 0; top: 0; bottom: 0; width: 50%;
@@ -175,19 +180,29 @@ h1,h2,h3,h4,h5 { font-family: var(--font-main); font-weight: 700; line-height: 1
 .hero-tagline {
   display: inline-flex; align-items: center; gap: 0.5rem;
   padding: 0.4rem 1.2rem;
-  border: 1px solid rgba(201,168,76,0.5);
+  border: 1px solid rgba(224,205,153,0.75);
   border-radius: 20px;
-  font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--gold-300); margin-bottom: 1.5rem;
+  background: rgba(10,35,21,0.28);
+  font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: #f0e4bf; margin-bottom: 1.5rem;
 }
 .hero-title {
-  font-family: var(--font-main); font-size: clamp(3.5rem, 7vw, 6rem);
-  font-weight: 600; line-height: 1;
-  color: var(--white); margin-bottom: 0.5rem;
+  font-family: var(--font-main); font-size: clamp(4.2rem, 9vw, 8rem);
+  font-weight: 700; line-height: 1.02;
+  color: #ffffff; margin-bottom: 0.75rem;
+  text-shadow: 0 3px 24px rgba(6,26,15,0.55), 0 1px 3px rgba(6,26,15,0.4);
 }
-.hero-title .accent { color: var(--gold-400); font-style: italic; }
-.hero-subtitle { font-family: var(--font-main); font-size: 1.3rem; font-style: italic; color: var(--green-200); margin-bottom: 1.5rem; }
-.hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 480px; line-height: 1.8; margin-bottom: 2.5rem; }
+.hero-title .accent { color: var(--gold-300); font-style: italic; }
+.hero-subtitle {
+  font-family: var(--font-main); font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  font-style: italic; color: #f2fbf5; margin-bottom: 1.5rem;
+  text-shadow: 0 2px 14px rgba(6,26,15,0.5);
+}
+.hero-desc {
+  font-size: 1.15rem; color: rgba(255,255,255,0.96); max-width: 480px;
+  line-height: 1.8; margin-bottom: 2.5rem;
+  text-shadow: 0 2px 12px rgba(6,26,15,0.45);
+}
 .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn-primary {
   padding: 0.9rem 2rem;
@@ -202,9 +217,9 @@ h1,h2,h3,h4,h5 { font-family: var(--font-main); font-weight: 700; line-height: 1
 .btn-primary:hover { background: var(--gold-400); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,168,76,0.4); }
 .btn-outline {
   padding: 0.9rem 2rem;
-  background: transparent;
+  background: rgba(10,35,21,0.32);
   color: var(--white);
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1.5px solid rgba(255,255,255,0.75);
   border-radius: var(--radius-md);
   font-family: var(--font-main); font-size: 0.95rem; font-weight: 400;
   cursor: pointer; text-decoration: none;
@@ -213,8 +228,8 @@ h1,h2,h3,h4,h5 { font-family: var(--font-main); font-weight: 700; line-height: 1
 }
 .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
 .hero-stats { display: flex; gap: 3rem; margin-top: 3rem; }
-.hero-stat-num { font-family: var(--font-main); font-size: 2.5rem; font-weight: 700; color: var(--gold-400); }
-.hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+.hero-stat-num { font-family: var(--font-main); font-size: 2.7rem; font-weight: 700; color: var(--gold-300); text-shadow: 0 2px 14px rgba(6,26,15,0.5); }
+.hero-stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.92); text-shadow: 0 1px 8px rgba(6,26,15,0.45); }
 .hero-visual { display: flex; justify-content: center; align-items: center; }
 .hero-fruit-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
